@@ -55,7 +55,8 @@ body {
 }
 
 .signin-register{
-    font-size: 13pt;
+    font-size: 20pt;
+    font-weight:bold;
 }
 
 .signin-register:hover{

@@ -1,16 +1,34 @@
 <header>
     <!--HEADER TOP-->
-    <div class="header-top bg-dark">
+    <div class="header-top bg-dark text-light">
+      @auth
             <div class="nav justify-content-end">
                 <ul class="nav nav-top-kontenkanan">
                     <li class="nav-item">
                         <a5 class="nav-link top-kontenkanan" href="#">Wishlist</a5>
                     </li>
                     <li class="nav-item">
-                        <a5 class="nav-link top-kontenkanan" href="#">My Account</a5>
+                      {{-- @csrf --}}
+                        {{-- <a class="nav-link top-kontenkanan" href="{{ route('logout')}}">Logout</a> --}}
+                        <form method="POST" action="{{ route('logout') }}">
+                          @csrf
+
+                          <a class="nav-link top-kontenkanan" href="{{route('logout')}}"
+                                  onclick="event.preventDefault();
+                                              this.closest('form').submit();">
+                              {{ __('Log out') }}
+                        </a>
+                      </form>
                     </li>
                 </ul>
             </div>
+      @else
+            <div>
+              <marquee scrollamount="50">
+              <a>Selamat datang di ZETABIT | Solusi lengkap dan terpercaya kebutuhan elektronikmu</a>
+              </marquee>
+            </div>
+      @endauth
     </div>
 
     <!--HEADER MIDDLE UTAMA-->
@@ -58,8 +76,12 @@
                                 <div class="row welcome">
                                     <p class="text-white text-decoration-none m-0">Selamat datang</p>
                                 </div>
-                                <div class="row d-flex">
-                                  <h6><a class="link-light text-decoration-none signin-register" href="#" data-toggle="modal" data-target="#exampleModal">Masuk / Daftar</a></h6>
+                                <div class="row" style="display:inline-block; max-width:150px; overflow:hidden; white-space:nowrap; text-overflow: ellipsis; font-weight:500;">
+                                  @auth
+                                  <a class="link-light text-decoration-none signin-register" href="{{ route('home') }}">{{ Auth::user()->name }}</a>
+                                  @else
+                                  <a class="link-light text-decoration-none signin-register" href="{{ route('login') }}">Masuk / Daftar</a>
+                                  @endauth
                                 </div>
             
                             </div>

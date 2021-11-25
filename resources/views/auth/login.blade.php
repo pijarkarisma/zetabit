@@ -2,7 +2,8 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo/>
+                {{-- <img src="{{asset('frontend/image/zetabit-logo.png')}}" class="h-10"></img> --}}
             </a>
         </x-slot>
 
@@ -50,6 +51,14 @@
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
+            </div>
+            <div class="flex justify-center mt-10">
+                <div><a>Don't have an account?</a></div>
+                <div class="ml-1">
+                    <a class="underline text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('Register') }}
+                    </a>
+                </div>
             </div>
         </form>
     </x-auth-card>
