@@ -24,7 +24,7 @@
             </div>
       @else
             <div>
-              <marquee scrollamount="50">
+              <marquee scrollamount="10">
               <a>Selamat datang di ZETABIT | Solusi lengkap dan terpercaya kebutuhan elektronikmu</a>
               </marquee>
             </div>
@@ -76,7 +76,8 @@
                                 <div class="row welcome">
                                     <p class="text-white text-decoration-none m-0">Selamat datang</p>
                                 </div>
-                                <div class="row" style="display:inline-block; max-width:150px; overflow:hidden; white-space:nowrap; text-overflow: ellipsis; font-weight:500;">
+                                <div class="row" style="display:inline-block; max-width:150px; overflow:hidden; white-space:nowrap; font-weight:500; text-overflow: ellipsis; color:white">
+                                  @csrf
                                   @auth
                                   <a class="link-light text-decoration-none signin-register" href="{{ route('home') }}">{{ Auth::user()->name }}</a>
                                   @else
@@ -143,7 +144,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toogle top-menubar" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                DESKTOP
+                ALL-IN-ONE PC
               </a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#"> Acer</a></li>
