@@ -16,9 +16,9 @@ class CreateLaptopTable extends Migration
         Schema::create('laptop', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nomorSeri');
-            $table->string('brand');
+            $table->string('manufactur');
             $table->bigInteger('osId');
-            $table->bigInteger('vgaId')->nullable();
+            $table->bigInteger('vgaId');
             $table->bigInteger('memoryId');
             $table->bigInteger('storageId');
             $table->bigInteger('batteryId');

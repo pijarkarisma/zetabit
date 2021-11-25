@@ -16,8 +16,11 @@ class CreateStorageTable extends Migration
         Schema::create('storage', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('jenis');
+            $table->string('manufactur');
             $table->string('tipe');
-            $table->string('besar');
+            $table->string('capacity');
+            $table->string('interface');
+            $table->string('rpm');
             $table->bigInteger('harga');
             $table->integer('stok');
             $table->integer('terjual');

@@ -15,7 +15,8 @@ class CreateVgaTable extends Migration
     {
         Schema::create('vga', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nama');
+            $table->string('manufactur');
+            $table->string('name');
             $table->bigInteger('harga');
             $table->integer('stok');
             $table->integer('terjual');

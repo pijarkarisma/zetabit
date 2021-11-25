@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBaterryTable extends Migration
+class CreateCasingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateBaterryTable extends Migration
      */
     public function up()
     {
-        Schema::create('battery', function (Blueprint $table) {
+        Schema::create('casing', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
             $table->string('manufactur');
-            $table->string('nomorSeri');
-            $table->string('voltage');
-            $table->string('capacity');
+            $table->string('type');
+            $table->string('material');
             $table->bigInteger('harga');
             $table->integer('stok');
             $table->integer('terjual');
@@ -34,6 +32,6 @@ class CreateBaterryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('baterry');
+        Schema::dropIfExists('casing');
     }
 }

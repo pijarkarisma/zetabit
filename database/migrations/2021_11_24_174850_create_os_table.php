@@ -16,7 +16,7 @@ class CreateOsTable extends Migration
         Schema::create('os', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('tipe');
-            $table->string('brand')->nullable();
+            $table->string('manufacture');
             $table->string('nama');
             $table->bigInteger('harga');
             $table->datetime('tanggalRilis');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBaterryTable extends Migration
+class CreateHeatsinkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateBaterryTable extends Migration
      */
     public function up()
     {
-        Schema::create('battery', function (Blueprint $table) {
+        Schema::create('heatsink', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
             $table->string('manufactur');
-            $table->string('nomorSeri');
-            $table->string('voltage');
-            $table->string('capacity');
+            $table->string('watt');
+            $table->string('material');
+            $table->string('size');
+            $table->string('weight');
+            $table->string('rpm');
             $table->bigInteger('harga');
             $table->integer('stok');
             $table->integer('terjual');
@@ -34,6 +35,6 @@ class CreateBaterryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('baterry');
+        Schema::dropIfExists('heatsink');
     }
 }

@@ -16,7 +16,10 @@ class CreateRamTable extends Migration
         Schema::create('ram', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('tipe');
-            $table->string('besar');
+            $table->string('manufactur');
+            $table->string('capacity');
+            $table->string('speed');
+            $table->float('latency');
             $table->bigInteger('harga');
             $table->integer('stok');
             $table->integer('terjual');
