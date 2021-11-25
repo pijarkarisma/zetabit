@@ -17,11 +17,11 @@ class CreateLaptopTable extends Migration
             $table->bigIncrements('id');
             $table->string('nomorSeri');
             $table->string('manufactur');
-            $table->bigInteger('osId');
-            $table->bigInteger('vgaId');
-            $table->bigInteger('memoryId');
-            $table->bigInteger('storageId');
-            $table->bigInteger('batteryId');
+            $table->unsignedBigInteger('osId');
+            $table->unsignedBigInteger('vgaId');
+            $table->unsignedBigInteger('memoryId');
+            $table->unsignedBigInteger('storageId');
+            $table->unsignedBigInteger('batteryId');
             $table->boolean('punyaOpticalDrive');
             $table->string('audio');
             $table->string('camera');
