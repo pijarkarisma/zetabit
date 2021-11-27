@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFanTable extends Migration
+class CreateExternalstorageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,14 @@ class CreateFanTable extends Migration
      */
     public function up()
     {
-        Schema::create('fan', function (Blueprint $table) {
+        Schema::create('externalstorage', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produkId');
+            $table->string('jenis');
             $table->string('tipe');
-            $table->string('model');
-            $table->string('material');
-            $table->string('voltase');
-            $table->string('usbport');
-            $table->string('daya');
-            $table->string('speed');
+            $table->string('berat');
+            $table->string('kecepatan');
+            $table->string('kapasitas');
             $table->timestamps();
         });
     }
@@ -34,6 +32,6 @@ class CreateFanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fan');
+        Schema::dropIfExists('externalstorage');
     }
 }
