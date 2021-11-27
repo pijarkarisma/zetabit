@@ -15,8 +15,9 @@ class CreateLaptopTable extends Migration
     {
         Schema::create('laptop', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('produkId');
             $table->string('nomorSeri');
-            $table->string('manufactur');
+            $table->unsignedBigInteger('processorId');
             $table->unsignedBigInteger('osId');
             $table->unsignedBigInteger('vgaId');
             $table->unsignedBigInteger('memoryId');
@@ -30,10 +31,6 @@ class CreateLaptopTable extends Migration
             $table->string('dimensi');
             $table->string('display');
             $table->string('berat');
-            $table->bigInteger('harga');
-            $table->datetime('tanggalRilis');
-            $table->integer('stok');
-            $table->integer('terjual');
             $table->timestamps();
         });
     }

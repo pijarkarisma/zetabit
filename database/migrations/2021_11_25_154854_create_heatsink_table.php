@@ -15,15 +15,12 @@ class CreateHeatsinkTable extends Migration
     {
         Schema::create('heatsink', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('manufactur');
+            $table->unsignedBigInteger('produkId');
             $table->string('watt');
             $table->string('material');
             $table->string('size');
             $table->string('weight');
             $table->string('rpm');
-            $table->bigInteger('harga');
-            $table->integer('stok');
-            $table->integer('terjual');
             $table->timestamps();
         });
     }

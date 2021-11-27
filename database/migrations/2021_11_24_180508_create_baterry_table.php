@@ -15,14 +15,11 @@ class CreateBaterryTable extends Migration
     {
         Schema::create('battery', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
-            $table->string('manufactur');
+            $table->unsignedBigInteger('produkId');
+            $table->string('jenis');
             $table->string('nomorSeri');
             $table->string('voltage');
             $table->string('capacity');
-            $table->bigInteger('harga');
-            $table->integer('stok');
-            $table->integer('terjual');
             $table->timestamps();
         });
     }

@@ -15,13 +15,10 @@ class CreatePowersupplyTable extends Migration
     {
         Schema::create('powersupply', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('manufactur');
-            $table->string('type');
+            $table->unsignedBigInteger('produkId');
+            $table->string('tipe');
             $table->string('maxpower');
             $table->string('modular');
-            $table->bigInteger('harga');
-            $table->integer('stok');
-            $table->integer('terjual');
             $table->timestamps();
         });
     }

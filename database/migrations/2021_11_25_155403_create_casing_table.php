@@ -15,12 +15,9 @@ class CreateCasingTable extends Migration
     {
         Schema::create('casing', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('manufactur');
+            $table->unsignedBigInteger('produkId');
             $table->string('type');
             $table->string('material');
-            $table->bigInteger('harga');
-            $table->integer('stok');
-            $table->integer('terjual');
             $table->timestamps();
         });
     }

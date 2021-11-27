@@ -16,6 +16,7 @@ class CreateCpuTable extends Migration
         Schema::create('cpu', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('motherboardId');
+            $table->unsignedBigInteger('processorId');
             $table->unsignedBigInteger('heatsinkId');
             $table->unsignedBigInteger('powersupplyId');
             $table->unsignedBigInteger('vgaId');
@@ -23,6 +24,7 @@ class CreateCpuTable extends Migration
             $table->unsignedBigInteger('storageId');
             $table->unsignedBigInteger('batteryId');
             $table->unsignedBigInteger('casingId');
+            $table->boolean('punyaOpticalDrive');
             $table->timestamps();
         });
     }

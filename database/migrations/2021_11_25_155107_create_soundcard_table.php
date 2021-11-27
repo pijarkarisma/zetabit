@@ -15,7 +15,7 @@ class CreateSoundcardTable extends Migration
     {
         Schema::create('soundcard', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('manufactur');
+            $table->unsignedBigInteger('produkId');
             $table->string('interface');
             $table->string('channels');
             $table->string('digitalaudio');

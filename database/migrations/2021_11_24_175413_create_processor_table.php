@@ -15,13 +15,10 @@ class CreateProcessorTable extends Migration
     {
         Schema::create('processor', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('manufactur');
+            $table->unsignedBigInteger('produkId');
             $table->string('tipe');
             $table->string('gen');
             $table->string('deskripsi');
-            $table->bigInteger('harga');
-            $table->integer('stok');
-            $table->integer('terjual');
             $table->timestamps();
         });
     }

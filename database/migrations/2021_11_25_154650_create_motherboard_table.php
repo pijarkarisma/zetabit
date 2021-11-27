@@ -15,12 +15,9 @@ class CreateMotherboardTable extends Migration
     {
         Schema::create('motherboard', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('type');
-            $table->string('manufactur');
+            $table->unsignedBigInteger('produkId');
             $table->string('jenis');
-            $table->bigInteger('harga');
-            $table->integer('stok');
-            $table->integer('terjual');
+            $table->string('type');
             $table->timestamps();
         });
     }

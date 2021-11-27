@@ -20,6 +20,12 @@ class AddForeignKeyToCpuTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
+            $table->foreign('processorId')
+                ->references('id')
+                ->on('processor')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->foreign('heatsinkId')
                 ->references('id')
                 ->on('heatsink')
