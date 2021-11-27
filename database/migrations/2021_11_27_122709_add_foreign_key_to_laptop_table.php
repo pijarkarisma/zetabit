@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddForeignKeyToCpuTable extends Migration
+class AddForeignKeyToLaptopTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,28 +13,16 @@ class AddForeignKeyToCpuTable extends Migration
      */
     public function up()
     {
-        Schema::table('cpu', function (Blueprint $table) {
-            $table->foreign('motherboardId')
-                ->references('id')
-                ->on('motherboard')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
+        Schema::table('laptop', function (Blueprint $table) {
             $table->foreign('processorId')
                 ->references('id')
                 ->on('processor')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-
-            $table->foreign('heatsinkId')
+            
+            $table->foreign('osId')
                 ->references('id')
-                ->on('heatsink')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
-            $table->foreign('powersupplyId')
-                ->references('id')
-                ->on('powersupply')
+                ->on('os')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -62,9 +50,9 @@ class AddForeignKeyToCpuTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             
-            $table->foreign('casingId')
+            $table->foreign('produkId')
                 ->references('id')
-                ->on('casing')
+                ->on('produk')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
@@ -77,7 +65,7 @@ class AddForeignKeyToCpuTable extends Migration
      */
     public function down()
     {
-        Schema::table('cpu', function (Blueprint $table) {
+        Schema::table('laptop', function (Blueprint $table) {
             //
         });
     }
