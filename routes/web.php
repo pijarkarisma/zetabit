@@ -26,7 +26,7 @@ Route::get('/admin',function(){
 })->name('admin');
 
 Route::get('/admin/produk',function(){
-    return view('product');
+    return view('vga');
 });
 
 Route::get('/dash',function(){
