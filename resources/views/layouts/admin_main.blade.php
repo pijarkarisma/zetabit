@@ -38,7 +38,7 @@
         }
 
         .logo_content .logo i{
-            font-size: 28px;
+            font-size: 30px;
             margin-right: 5px;
         }
 
@@ -47,9 +47,9 @@
             font-weight: 400;
         };
 
-        .sidebar .btn{
+        .sidebar #btn{
             position: absolute;
-            color: #fff;
+            color: #fff;;
             left: 90%;
             top: 6px;
             font-size: 20px;
@@ -69,8 +69,11 @@
             height: 50px;
             width: 100%;
             margin: 0 5px;
-            list
+            list-style:none;
+            line-height: 50px;
         }
+
+        .sidebar 
     </style>
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
