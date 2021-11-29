@@ -23,6 +23,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/admin',function(){
     return view('layouts/admin_main');
+})->name('admin');
+
+Route::get('/dash',function(){
+    return view('dash/dashboard');
 });
 
 require __DIR__.'/auth.php';

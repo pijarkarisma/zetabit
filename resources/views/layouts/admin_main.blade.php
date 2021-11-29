@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <title> ZETABIT | Admin </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Bootstrap core CSS -->
+     <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
+
+
     <style>
         *{
             margin: 0;
@@ -45,6 +50,7 @@
         .logo_content .logo .logo_name{
             font-size: 20px;
             font-weight: 400;
+            text-decoration: none;
         };
 
         /* .sidebar #btn{
@@ -105,7 +111,9 @@
 
         .sidebar .profile_content .profile{
             position: relative;
-            padding: 10px 6px;
+            padding-top: 1rem;
+            padding-bottom: 4.5rem;
+            padding-left: 1rem;
             height: 60px;
             background: #1d1b31;
         }
@@ -143,6 +151,16 @@
             transform: translateX(-50%);
             min-width: 50px;
             line-height: 50px;
+            text-decoration: none;
+        }
+
+        .name{
+            display:inline-block; 
+            max-width:120px; 
+            overflow:hidden; 
+            white-space:nowrap; 
+            text-overflow: ellipsis; 
+            color:white;
         }
     </style>
     <!-- Boxicons CDN Link -->
@@ -153,7 +171,7 @@
     <div class="sidebar">
         <div class="logo_content">
             <div class="logo">
-                <div class="logo_name">ZETABIT</div>    
+                <a class="logo_name" href="{{route('home')}}">ZETABIT</a>    
             </div>
         </div>
         <ul class="nav_list">
@@ -191,13 +209,25 @@
             <div class="profile_content">
                 <div class="profile">
                     <div class="profile_details">
-                        <img src="http://127.0.0.1:8000/frontend/image/hermonie.jpg" alt="">
+                        <img src="{{ asset('frontend/image/hermonie.jpg') }}" alt="">
                         <div class="name_job">
-                            <div class="name">Desi Christine </div>
+                            <p class="name">{{ Auth::user()->name }}</p>
                             <div class="job">Admin</div>
                         </div>
                     </div>
-                    <i class='bx bx-log-out' id="log_out"></i>
+                    {{-- <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    <a class='bx bx-log-out text-decoration-none' style="color: white" id="log_out" href="{{route('logout')}}"
+                    onclick="this.closest('form').submit();"></a>
+                    </form> --}}
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <a class="bx bx-log-out" id="log_out" style="color: white" href="{{route('logout')}}"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                      </a>
+                    </form>
                 </div>
             </div>
         </ul>
