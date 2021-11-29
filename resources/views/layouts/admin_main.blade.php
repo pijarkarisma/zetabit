@@ -19,14 +19,12 @@
             box-sizing: border-box;
             font-family: "Poppins", sans-serif;
         }
-
         body{
             position: relative;
             min-height: 100vh;
             width: 100%;
             overflow: hidden;
         }
-
         .sidebar{
             position: fixed;
             top: 0;
@@ -37,7 +35,6 @@
             padding-left:0rem;
             padding-top: 6px;
         }
-
         .sidebar .logo_content .logo{
             color: #fff;
             display: flex;
@@ -45,18 +42,15 @@
             width: 100%;
             align-items: center;
         }
-
         .logo_content .logo i{
             font-size: 28px;
             margin-right: 5px;
         }
-
         .logo_content .logo .logo_name{
             font-size: 20px;
             font-weight: 400;
             text-decoration: none;
         };
-
         /* .sidebar #btn{
             position: absolute;
             color: #fff;;
@@ -69,13 +63,11 @@
             line-height: 50px;
             transform: translateX(-50%);
         } */
-
         .sidebar ul{
             margin-top: 20px;
             margin-left:0px;
             padding-left:0px;
         }
-
         .sidebar ul li{
             position: relative;
             height: 50px;
@@ -86,7 +78,6 @@
             margin-left:0px;
             padding-left: 0px;
         }
-
         .sidebar ul li a{
             color: #fff;
             display: flex;
@@ -95,12 +86,10 @@
             transition: all 0.4s ease;
             border-radius: 12px;
         } 
-
         .sidebar ul li a:hover{
             color: #11101d;
             background: #fff;
         }
-
         .sidebar ul li a i{
             height: 50px;
             min-width: 50px;
@@ -108,7 +97,6 @@
             line-height: 50px;
             text-align:center;
         }
-
         .sidebar .profile_content{
             position: absolute;
             color: #fff;
@@ -116,7 +104,6 @@
             left: 0;
             width:100%;
         }
-
         .sidebar .profile_content .profile{
             position: relative;
             padding-top: 1rem;
@@ -125,32 +112,26 @@
             height: 60px;
             background: #1d1b31;
         }
-
         .profile_content .profile .profile_details{
             display:flex;
             align-items: center;
         }
-
         .profile .profile_details img{
             height: 45px;
             width: 45px;
             object-fit:cover;
             border-radius: 12px;
         }
-
         .profile .profile_details .name_job{
             margin-left: 10px;
         }
-
         .profile .profile_details .name{
             font-size: 15px;
             font-weight: 400;
         }   
-
         .profile .profile_details .job{
             font-size: 12px;
         }
-
         .profile #log_out{
             position:absolute;
             left: 88%;
@@ -161,7 +142,6 @@
             line-height: 50px;
             text-decoration: none;
         }
-
         .name{
             display:inline-block; 
             max-width:120px; 
@@ -170,7 +150,6 @@
             text-overflow: ellipsis; 
             color:white;
         }
-
         .navbar-brand{
             font-size:26pt;
             font-family: Viga;
