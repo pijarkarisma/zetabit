@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVgaTable extends Migration
+class CreateWebcamTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,17 @@ class CreateVgaTable extends Migration
      */
     public function up()
     {
-        Schema::create('vga', function (Blueprint $table) {
+        Schema::create('webcam', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produkId');
-            $table->string('nama');
+            $table->string('tipe');
+            $table->string('dimensi');
+            $table->string('berat');
+            $table->string('resolusi');
+            $table->string('material');
+            $table->string('nosukucadang');
+            $table->string('warna');
+            $table->string('jangkauan');
             $table->timestamps();
         });
     }
@@ -28,6 +35,6 @@ class CreateVgaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vga');
+        Schema::dropIfExists('webcam');
     }
 }

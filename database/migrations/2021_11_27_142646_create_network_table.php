@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBaterryTable extends Migration
+class CreateNetworkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,19 @@ class CreateBaterryTable extends Migration
      */
     public function up()
     {
-        Schema::create('battery', function (Blueprint $table) {
+        Schema::create('network', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produkId');
             $table->string('jenis');
-            $table->string('nomorSeri');
-            $table->string('voltage');
-            $table->string('capacity');
+            $table->string('tipe');
+            $table->string('frekuensi');
+            $table->string('kecepatan');
+            $table->string('sharingdevice');
+            $table->string('jangkauan');
+            $table->string('daya');
+            $table->string('fitur');
+            $table->string('wifi_standard');
+            $table->boolean('unlockgsm');
             $table->timestamps();
         });
     }
@@ -31,6 +37,6 @@ class CreateBaterryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('baterry');
+        Schema::dropIfExists('network');
     }
 }

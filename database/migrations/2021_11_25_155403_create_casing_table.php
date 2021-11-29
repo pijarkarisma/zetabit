@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVgaTable extends Migration
+class CreateCasingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateVgaTable extends Migration
      */
     public function up()
     {
-        Schema::create('vga', function (Blueprint $table) {
+        Schema::create('casing', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produkId');
-            $table->string('nama');
+            $table->string('type');
+            $table->string('material');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateVgaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vga');
+        Schema::dropIfExists('casing');
     }
 }

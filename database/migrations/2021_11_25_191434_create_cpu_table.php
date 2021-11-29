@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLaptopTable extends Migration
+class CreateCpuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,24 +13,18 @@ class CreateLaptopTable extends Migration
      */
     public function up()
     {
-        Schema::create('laptop', function (Blueprint $table) {
+        Schema::create('cpu', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('produkId');
-            $table->string('nomorSeri');
+            $table->unsignedBigInteger('motherboardId');
             $table->unsignedBigInteger('processorId');
-            $table->unsignedBigInteger('osId');
+            $table->unsignedBigInteger('heatsinkId');
+            $table->unsignedBigInteger('powersupplyId');
             $table->unsignedBigInteger('vgaId');
             $table->unsignedBigInteger('memoryId');
             $table->unsignedBigInteger('storageId');
             $table->unsignedBigInteger('batteryId');
+            $table->unsignedBigInteger('casingId');
             $table->boolean('punyaOpticalDrive');
-            $table->string('audio');
-            $table->string('camera');
-            $table->string('network');
-            $table->string('slots');
-            $table->string('dimensi');
-            $table->string('display');
-            $table->string('berat');
             $table->timestamps();
         });
     }
@@ -42,6 +36,6 @@ class CreateLaptopTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laptop');
+        Schema::dropIfExists('cpu');
     }
 }

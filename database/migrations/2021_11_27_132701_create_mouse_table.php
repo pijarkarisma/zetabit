@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBaterryTable extends Migration
+class CreateMouseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,18 @@ class CreateBaterryTable extends Migration
      */
     public function up()
     {
-        Schema::create('battery', function (Blueprint $table) {
+        Schema::create('mouse', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produkId');
+            $table->string('tipe');
             $table->string('jenis');
-            $table->string('nomorSeri');
-            $table->string('voltage');
-            $table->string('capacity');
+            $table->string('berat');
+            $table->string('jangkauan');
+            $table->string('koneksi');
+            $table->string('sumberdaya');
+            $table->string('dayatahansumberdaya');
+            $table->string('nosukucadang');
+            $table->string('warna');
             $table->timestamps();
         });
     }
@@ -31,6 +36,6 @@ class CreateBaterryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('baterry');
+        Schema::dropIfExists('mouse');
     }
 }

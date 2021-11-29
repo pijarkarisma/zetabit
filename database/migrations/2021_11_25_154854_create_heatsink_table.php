@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVgaTable extends Migration
+class CreateHeatsinkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateVgaTable extends Migration
      */
     public function up()
     {
-        Schema::create('vga', function (Blueprint $table) {
+        Schema::create('heatsink', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('produkId');
-            $table->string('nama');
+            $table->string('watt');
+            $table->string('material');
+            $table->string('size');
+            $table->string('weight');
+            $table->string('rpm');
             $table->timestamps();
         });
     }
@@ -28,6 +32,6 @@ class CreateVgaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vga');
+        Schema::dropIfExists('heatsink');
     }
 }
