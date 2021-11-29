@@ -4,11 +4,9 @@
       @auth
             <div class="nav justify-content-end">
                 <ul class="nav nav-top-kontenkanan">
-                   
                     <li class="nav-item">
                         <a class="nav-link top-kontenkanan" href="{{ route('admin') }}">Admin Dashboard</a>
-                    </li>
-            
+                    </li>           
                     <li class="nav-item">
                         <a5 class="nav-link top-kontenkanan" href="#">Wishlist</a5>
                     </li>

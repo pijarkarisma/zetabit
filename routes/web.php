@@ -22,7 +22,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('landing');
 
 Route::get('/admin',function(){
-    return view('layouts/admin_main');
+    return view('dash/dashboard');
 })->name('admin');
 
 Route::get('/dash',function(){

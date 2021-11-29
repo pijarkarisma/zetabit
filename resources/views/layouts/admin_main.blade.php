@@ -8,6 +8,9 @@
      <!-- Bootstrap core CSS -->
      <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
 
+     {{-- Logotype Font --}}
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Viga">
+
 
     <style>
         *{
@@ -31,7 +34,8 @@
             height:100%;
             width: 240px;
             background: #11101d;
-            padding: 6px 14px;
+            padding-left:0rem;
+            padding-top: 6px;
         }
 
         .sidebar .logo_content .logo{
@@ -68,15 +72,19 @@
 
         .sidebar ul{
             margin-top: 20px;
+            margin-left:0px;
+            padding-left:0px;
         }
 
         .sidebar ul li{
             position: relative;
             height: 50px;
             width: 100%;
-            margin: 0 5px;
+            /* margin: 0 5px; */
             list-style:none;
             line-height: 50px;
+            margin-left:0px;
+            padding-left: 0px;
         }
 
         .sidebar ul li a{
@@ -162,75 +170,45 @@
             text-overflow: ellipsis; 
             color:white;
         }
+
+        .navbar-brand{
+            font-size:26pt;
+            font-family: Viga;
+            color:white;
+            text-decoration: none;
+        }
     </style>
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-    <div class="sidebar">
-        <div class="logo_content">
-            <div class="logo">
-                <a class="logo_name" href="{{route('home')}}">ZETABIT</a>    
-            </div>
-        </div>
-        <ul class="nav_list">
-            <li>
-                <a href="#">
-                    <i class="bx bx-grid-alt" ></i>
-                    <span class="links_name">Dashboard</span>
-                </a>
-                <!-- <span class="tooltip">Dashboard</span> -->
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-package' ></i>
-                    <span class="links_name">Produk</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-user' ></i>
-                    <span class="links_name">User</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bxs-chat' ></i>
-                    <span class="links_name">Messages</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-check-square' ></i>
-                    <span class="links_name">Request</span>
-                </a>
-            </li>
-            <div class="profile_content">
-                <div class="profile">
-                    <div class="profile_details">
-                        <img src="{{ asset('frontend/image/hermonie.jpg') }}" alt="">
-                        <div class="name_job">
-                            <p class="name">{{ Auth::user()->name }}</p>
-                            <div class="job">Admin</div>
-                        </div>
-                    </div>
-                    {{-- <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                    <a class='bx bx-log-out text-decoration-none' style="color: white" id="log_out" href="{{route('logout')}}"
-                    onclick="this.closest('form').submit();"></a>
-                    </form> --}}
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
+    <div class="row">
+        <!--Sidebar-->
+        @include('layouts.admin_sidebar')
+        <!--end of Sidebar-->
 
-                        <a class="bx bx-log-out" id="log_out" style="color: white" href="{{route('logout')}}"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                      </a>
-                    </form>
+        <div class="col-md main-content">
+            <!--Navbar-->
+            <nav class="container-fluid p-3 bg-dark text-white float-left">
+                <div class="row align-items-start">
+                    <div class="col-md-auto">
+                        <h5 class="title-text-nav">
+                            Lembar Kerja Program Studi
+                        </h5>
+                        <h5 class="title-text-nav">|</h5>
+                        <h5 class="title2-text-nav">
+                            Fakultas Teknik Unika Atma Jaya
+                        </h5>
+                    </div>
                 </div>
-            </div>
-        </ul>
+            </nav>
+            <!--end of navbar-->
+
+            <!--start Content section-->
+            @yield('content')
+            <!--end of Content section-->
+        </div>
     </div>
         
 </body>
