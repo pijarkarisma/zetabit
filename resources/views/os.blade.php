@@ -1,7 +1,7 @@
 @extends('layouts.table')
 
 @section('konten')
-<div>
+                <div>
                     <table class="table">
                         <thead class="table-dark">
                             <tr>

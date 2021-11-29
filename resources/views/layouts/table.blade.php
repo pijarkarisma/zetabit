@@ -13,9 +13,11 @@
 <div class="container-fluid">
         <div class="row">
             <div class="col-10">
-                <h1 class="mt-3">Processor</h1>
+                <h1 class="mt-3">Produk</h1>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary" type="button">Tambah Produk Baru</button>
+                    <a href="#">
+                        <button class="btn btn-primary" type="button">Tambah Produk Baru</button>
+                    </a>
                 </div>
                 <br>
                 @yield('konten')

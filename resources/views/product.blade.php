@@ -1,4 +1,4 @@
-@extends('layouts.admin_main')
+@extends('layouts.table')
 
 @section('konten')
     <div>
@@ -23,8 +23,8 @@
                     <td>100</td>
                     <td>50</td>
                     <td>
-                        <a href="" class="badge bg-success">edit</a>
-                        <a href="" class="badge bg-danger">delete</a>
+                        <a href="#" class="badge bg-success">edit</a>
+                        <a href="#" class="badge bg-danger">delete</a>
                     </td>
                 </tr>
             </tbody>
