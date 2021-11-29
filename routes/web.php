@@ -25,6 +25,10 @@ Route::get('/admin',function(){
     return view('dash/dashboard');
 })->name('admin');
 
+Route::get('/admin/produk',function(){
+    return view('product');
+});
+
 Route::get('/dash',function(){
     return view('dash/dashboard');
 });
