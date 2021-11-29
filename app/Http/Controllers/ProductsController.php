@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductsController extends Controller
 {
@@ -13,7 +14,9 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        $produk = DB::table('produk')->get();
+        dump($produk);
+        return view('product');
     }
 
     /**
