@@ -15,7 +15,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- @foreach($battery as $bt)
+                            @foreach($battery as $bt)
                             <tr>
                                 <th scope="row">{{$bt->id}}</th>
                                 <td>{{$bt->produkId}}</td>
@@ -28,7 +28,7 @@
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
-                            @endforeach -->
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

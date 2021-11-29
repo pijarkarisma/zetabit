@@ -16,7 +16,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- @foreach($storage as $stor)
+                            @foreach($storage as $stor)
                             <tr>
                                 <th scope="row">{{$stor->id}}</th>
                                 <td>{{$stor->produkId}}</td>
@@ -30,7 +30,7 @@
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
-                            @endforeach -->
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

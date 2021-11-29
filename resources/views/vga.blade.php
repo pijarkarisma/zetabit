@@ -12,10 +12,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($vga as $vga)
                             <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
+                                <th scope="row">{{$vga->id}}</th>
+                                <td>{{$vga->produkId}}</td>
+                                <td>{{$vga->nama}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>

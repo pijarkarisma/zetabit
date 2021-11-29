@@ -26,29 +26,31 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($laptop as $lptp)
                             <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <th scope="row">{{$lptp->id}}</th>
+                                <td>{{$lptp->produkId}}</td>
+                                <td>{{$lptp->nomorSeri}}</td>
+                                <td>{{$lptp->processorId}}</td>
+                                <td>{{$lptp->osId}}</td>
+                                <td>{{$lptp->vgaId}}</td>
+                                <td>{{$lptp->memoryId}}</td>
+                                <td>{{$lptp->storageId}}</td>
+                                <td>{{$lptp->batteryId}}</td>
+                                <td>{{$lptp->punyaOpticalDrive}}</td>
+                                <td>{{$lptp->audio}}</td>
+                                <td>{{$lptp->camera}}</td>
+                                <td>{{$lptp->network}}</td>
+                                <td>{{$lptp->slots}}</td>
+                                <td>{{$lptp->dimensi}}</td>
+                                <td>{{$lptp->display}}</td>
+                                <td>{{$lptp->berat}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>   

@@ -8,8 +8,8 @@ use App\Http\Controllers\Controller;
 
 class ProdukController extends Controller
 {
-    public function produk(){
-        $produk = DB::table('product')->get();
-        return view('product');
+    public function index(){
+        $produk = DB::table('produk')->get();
+        return view('product',['product' => $produk]);
     }
 }

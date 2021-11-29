@@ -12,7 +12,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- @foreach($os as $os)
+                            @foreach($os as $os)
                                 <tr>
                                 <th scope="row">{{$os->id}}</th>
                                 <td>{{$os->produkId}}</td>
@@ -22,7 +22,7 @@
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
-                            @endforeach -->
+                            @endforeach
                             
                         </tbody>
                     </table>

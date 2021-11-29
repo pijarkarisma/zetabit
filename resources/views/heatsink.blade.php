@@ -16,7 +16,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <!-- @foreach($heatsink as $hs)
+                            @foreach($heatsink as $hs)
                             <tr>
                                 <th scope="row">{{$hs->id}}</th>
                                 <td>{{$hs->produkId}}</td>
@@ -30,7 +30,7 @@
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
-                            @endforeach -->
+                            @endforeach
                         </tbody>
                     </table>
                 </div> 

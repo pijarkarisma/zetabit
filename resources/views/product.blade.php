@@ -27,6 +27,7 @@
                         <a href="#" class="badge bg-danger">delete</a>
                     </td>
                 </tr>
+                
                 <!-- @foreach($produk as $prdk)
                 <tr>
                     <th scope="row">{{$prdk->id}}</th>
