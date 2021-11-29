@@ -76,13 +76,13 @@
                                 <div class="row welcome">
                                     <p class="text-white text-decoration-none m-0">Selamat datang</p>
                                 </div>
-                                <div class="row" style="display:inline-block; max-width:150px; overflow:hidden; white-space:nowrap; font-weight:500; text-overflow: ellipsis; color:white">
-                                  @csrf
-                                  @auth
-                                  <a class="link-light text-decoration-none signin-register" href="{{ route('home') }}">{{ Auth::user()->name }}</a>
-                                  @else
-                                  <a class="link-light text-decoration-none signin-register" href="{{ route('login') }}">Masuk / Daftar</a>
-                                  @endauth
+                                <div class="row">
+                                    @csrf
+                                    @auth
+                                    <a class="signin-register text-decoration-none" href="{{ route('home') }}">{{ Auth::user()->name }}</a>
+                                    @else
+                                    <a class="signin-register text-decoration-none" href="{{ route('login') }}">Masuk / Daftar</a>
+                                    @endauth
                                 </div>
             
                             </div>

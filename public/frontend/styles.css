@@ -55,9 +55,22 @@ body {
 }
 
 .signin-register{
-    font-size: 12pt;
-    font-weight:bold;
+    text-decoration: none;
+    display:inline-block; 
+    max-width:200px; 
+    overflow:hidden; 
+    white-space:nowrap; 
+    text-overflow: ellipsis; 
+    font-weight:500;
+    font-size: 14pt;
+    color:white;
 }
+
+/* .text-signin{
+  font-weight:500;
+  font-size: 14pt;
+  color:white;
+} */
 
 .signin-register:hover{
     color:rgb(66, 186, 150);
