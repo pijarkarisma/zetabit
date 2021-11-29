@@ -172,6 +172,15 @@
                               <li><a class="dropdown-item" href="#">Profile</a></li>
                               <li><hr class="dropdown-divider"></li>
                               <li><a class="dropdown-item" href="#">Sign out</a></li>
+                              <li><form method="POST" action="{{ route('logout') }}">
+                                @csrf
+      
+                                <a class="dropdown-item" href="{{route('logout')}}"
+                                        onclick="event.preventDefault();
+                                                    this.closest('form').submit();">
+                                    {{ __('Log out') }}
+                              </a></li>
+                            </form>
                             </ul>
                           </div>
                         </div>
