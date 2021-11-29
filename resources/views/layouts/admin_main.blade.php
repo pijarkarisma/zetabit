@@ -206,7 +206,7 @@
             <!--end of navbar-->
 
             <!--start Content section-->
-            @yield('content')
+            @yield('konten')
             <!--end of Content section-->
         </div>
     </div>

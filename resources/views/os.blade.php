@@ -1,4 +1,4 @@
-@extends('layouts.table')
+@extends('layouts.admin_main')
 
 @section('konten')
     <div class="container-fluid">
