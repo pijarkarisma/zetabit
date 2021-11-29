@@ -27,6 +27,21 @@
                         <a href="#" class="badge bg-danger">delete</a>
                     </td>
                 </tr>
+                <!-- @foreach($produk as $prdk)
+                <tr>
+                    <th scope="row">{{$prdk->id}}</th>
+                    <td>{{prdk->kategori}}</td>
+                    <td>{{prdk->manufaktur}}</td>
+                    <td>{{prdk->harga}}</td>
+                    <td>{{prdk->terjual}}</td>
+                    <td>{{prdk->garansi}}</td>
+                    <td>{{prdk->tanggal_rilis}}</td>
+                    <td>
+                        <a href="#" class="badge bg-success">edit</a>
+                        <a href="#" class="badge bg-danger">delete</a>
+                    </td>
+                </tr>
+                @endforeach -->
             </tbody>
         </table>
     </div>

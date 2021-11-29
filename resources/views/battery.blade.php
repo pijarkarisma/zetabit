@@ -15,18 +15,20 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- @foreach($battery as $bt)
                             <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <th scope="row">{{$bt->id}}</th>
+                                <td>{{$bt->produkId}}</td>
+                                <td>{{$bt->jenis}}</td>
+                                <td>{{$bt->nomorSeri}}</td>
+                                <td>{{$bt->voltage}}</td>
+                                <td>{{$bt->capacity}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
+                            @endforeach -->
                         </tbody>
                     </table>
                 </div>

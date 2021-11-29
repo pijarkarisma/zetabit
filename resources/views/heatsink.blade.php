@@ -1,7 +1,7 @@
 @extends('layouts.table')
 
 @section('konten')
-<div>
+                <div>
                     <table class="table">
                         <thead class="table-dark">
                             <tr>
@@ -16,19 +16,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <!-- @foreach($heatsink as $hs)
                             <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <th scope="row">{{$hs->id}}</th>
+                                <td>{{$hs->produkId}}</td>
+                                <td>{{$hs->watt}}</td>
+                                <td>{{$hs->material}}</td>
+                                <td>{{$hs->size}}</td>
+                                <td>{{$hs->weight}}</td>
+                                <td>{{}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
+                            @endforeach -->
                         </tbody>
                     </table>
                 </div> 

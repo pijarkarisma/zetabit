@@ -12,15 +12,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
+                            <!-- @foreach($os as $os)
+                                <tr>
+                                <th scope="row">{{$os->id}}</th>
+                                <td>{{$os->produkId}}</td>
+                                <td>{{$os->tipe}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
+                            @endforeach -->
+                            
                         </tbody>
                     </table>
                 </div>

@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProdrukControlle;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\OSController;
+use App\Http\Controllers\HeatsinkController;
+use App\Http\Controllers\ProcessorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,14 +34,14 @@ Route::get('/admin/produk',function(){
 })->name('produk');
 
 
-Route::get('/admin/produk',[ProdukController::class,'produk'])->name('produk');
-// Route::get('/admin/os','OSController@os')->name('os');
-// Route::get('/admin/laptop','LaptopController@laptop')->name('laptop');
-// Route::get('/admin/allinone','LaptopController@allinone')->name('allinone');
-// Route::get('/admin/heatsink','HeatsinkController@heatsink')->name('heatsink');
-// Route::get('/admin/battery','BatteryController@battery')->name('battery');
-// Route::get('/admin/processor','ProcessorController@processor')->name('processor');
-// Route::get('/admin/vga','VGAController@vga')->name('vga');
+Route::get('/admin/produk', 'ProdukController@produk')->name('produk');
+Route::get('/admin/os','OSController@os')->name('os');
+Route::get('/admin/laptop','LaptopController@laptop')->name('laptop');
+Route::get('/admin/allinone','LaptopController@allinone')->name('allinone');
+Route::get('/admin/heatsink','HeatsinkController@heatsink')->name('heatsink');
+Route::get('/admin/battery','BatteryController@battery')->name('battery');
+Route::get('/admin/processor','ProcessorController@processor')->name('processor');
+Route::get('/admin/vga','VGAController@vga')->name('vga');
 
 Route::get('/dash',function(){
     return view('dash/dashboard');
