@@ -100,6 +100,7 @@
             color: #fff;
             bottom: 0;
             left: 0;
+            width:100%;
         }
 
         .sidebar .profile_content .profile{
@@ -138,6 +139,7 @@
             position:absolute;
             left: 88%;
             bottom: 5px;
+            font-size: 20px;
             transform: translateX(-50%);
             min-width: 50px;
             line-height: 50px;
@@ -189,7 +191,7 @@
             <div class="profile_content">
                 <div class="profile">
                     <div class="profile_details">
-                        <img src="hermonie.jpg" alt="">
+                        <img src="http://127.0.0.1:8000/frontend/image/hermonie.jpg" alt="">
                         <div class="name_job">
                             <div class="name">Desi Christine </div>
                             <div class="job">Admin</div>
