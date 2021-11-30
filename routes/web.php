@@ -32,6 +32,10 @@ Route::get('/admin',function(){
     return view('dash/dashboard');
 })->name('admin');
 
+//Produk
+Route::get('produkform', [ProdukController::class, 'form'])->name('produkcontroller');
+Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
+
 //Processor
 Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
 Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name('addprocessor');
