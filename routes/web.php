@@ -32,6 +32,10 @@ Route::get('/admin',function(){
     return view('dash/dashboard');
 })->name('admin');
 
+Route::get('/shopping-cart', function(){
+    return view('cart');
+})->name('cart');
+
 //Produk
 Route::get('produkform', [ProdukController::class, 'form'])->name('produkcontroller');
 Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
@@ -42,11 +46,6 @@ Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name(
 Route::get('processor', [ProcessorController::class, 'processor'])->name('processor');
 
 
-// Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprocessor');
-// Route::post('produk', [ProdukController::class, 'produk'])->name('processor');
-Route::post('processor', [ProcessorController::class, 'processor'])->name('processor');
-Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprocessor');
-Route::post('produk', [ProdukController::class, 'produk'])->name('processor');
 Route::get('heatsinkform', [HeatsinkController::class, 'form'])->name('heatsinkform');
 Route::post('addheatsink', [HeatsinkController::class, 'addHeatsink'])->name('addheatsink');
 Route::post('heatsink', [HeatsinkController::class, 'heatsink'])->name('heatsink');

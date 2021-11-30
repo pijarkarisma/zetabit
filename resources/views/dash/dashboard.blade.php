@@ -125,11 +125,11 @@
                       </div>
                     </li>
                     <li class="border-top my-3"></li>
-                    {{-- <li class="mb-1">
+                    <li class="mb-1">
                       <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                        #
+                        SHOW ALL PRODUCTS
                       </button>
-                    </li> --}}
+                    </li>
                   </ul>
                 </div>
                 <div class="b-example-divider"></div>

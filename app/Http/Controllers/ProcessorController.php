@@ -6,6 +6,7 @@ use App\Models\Processor;
 use App\Models\Produk;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProcessorController extends Controller
 {
@@ -16,12 +17,6 @@ class ProcessorController extends Controller
 
     public function processor(){
         $processors = Processor::all();
-
-        // $processors = DB::table('processor')
-        //     ->select('processor.*','produk.manufaktur')
-        //     ->join('beans','products.idBeans','=','beans.id')
-        //     ->get();
-
         return view('dash.products.showProcessor', compact('processors'));
     }
 
