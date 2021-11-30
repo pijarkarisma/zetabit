@@ -127,16 +127,8 @@
                     <li class="border-top my-3"></li>
                     <li class="mb-1">
                       <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                        Account
+                        ADD STOCK PRODUK
                       </button>
-                      <div class="collapse" id="account-collapse">
-                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="#" class="link-light rounded">New...</a></li>
-                          <li><a href="#" class="link-light rounded">Profile</a></li>
-                          <li><a href="#" class="link-light rounded">Settings</a></li>
-                          <li><a href="#" class="link-light rounded">Sign out</a></li>
-                        </ul>
-                      </div>
                     </li>
                   </ul>
                 </div>
@@ -174,7 +166,7 @@
                               <li><a class="dropdown-item" href="#">Settings</a></li>
                               <li><a class="dropdown-item" href="#">Profile</a></li>
                               <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#">Sign out</a></li>
+                              {{-- <li><a class="dropdown-item" href="#">Sign out</a></li> --}}
                               <li><form method="POST" action="{{ route('logout') }}">
                                 @csrf
       
