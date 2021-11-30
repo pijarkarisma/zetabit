@@ -1,15 +1,7 @@
 @extends('layouts.table')
 
 @section('konten')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10">
-                <h1 class="mt-3">Processor</h1>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary" type="button">Tambah Produk Baru</button>
-                </div>
-                <br>
-                <div>
+<div>
                     <table class="table">
                         <thead class="table-dark">
                             <tr>
@@ -17,24 +9,25 @@
                                 <th scope="col">ProdukID</th>
                                 <th scope="col">Tipe</th>
                                 <th scope="col">Gen</th>
+                                <th scope="col">Deskripsi</th>
                                 <th scope="col">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($processor as $pro)
                             <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <th scope="row">{{$pro->id}}</th>
+                                <td>{{$pro->produkId}}</td>
+                                <td>{{$pro->tipe}}</td>
+                                <td>{{$pro->gen}}</td>
+                                <td>{{$pro->deskripsi}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-    </div>    
 @endsection

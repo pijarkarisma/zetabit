@@ -1,5 +1,12 @@
 <?php
 
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\OSController;
+use App\Http\Controllers\HeatsinkController;
+use App\Http\Controllers\ProcessorController;
+use App\Http\Controllers\BatteryController;
+use App\Http\Controllers\VGAController;
+use App\Http\Controllers\LaptopController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProcessorController;
 
@@ -32,8 +39,18 @@ Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name(
 Route::post('processor', [ProcessorController::class, 'processor'])->name('processor');
 
 Route::get('/admin/produk',function(){
-    return view('vga');
-});
+    return view('produ');
+})->name('produk');
+
+
+Route::get('/admin/produk', 'ProdukController@index')->name('produk');
+Route::get('/admin/os','OSController@index')->name('os');
+Route::get('/admin/laptop','LaptopController@index')->name('laptop');
+Route::get('/admin/allinone','LaptopController@index')->name('allinone');
+Route::get('/admin/heatsink','HeatsinkController@index')->name('heatsink');
+Route::get('/admin/battery','BatteryController@index')->name('battery');
+Route::get('/admin/processor','ProcessorController@index')->name('processor');
+Route::get('/admin/vga','VGAController@index')->name('vga');
 
 Route::get('/dash',function(){
     return view('dash/dashboard');

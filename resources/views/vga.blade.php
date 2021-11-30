@@ -1,15 +1,7 @@
 @extends('layouts.table')
 
 @section('konten')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10">
-                <h1 class="mt-3">VGA</h1>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary" type="button">Tambah Produk Baru</button>
-                </div>
-                <br>
-                <div>
+<div>
                     <table class="table">
                         <thead class="table-dark">
                             <tr>
@@ -20,10 +12,11 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($vga as $vga)
                             <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
+                                <th scope="row">{{$vga->id}}</th>
+                                <td>{{$vga->produkId}}</td>
+                                <td>{{$vga->nama}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>
@@ -31,8 +24,5 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>    
+                </div>  
 @endsection

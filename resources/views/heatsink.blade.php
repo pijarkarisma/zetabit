@@ -1,14 +1,6 @@
 @extends('layouts.table')
 
 @section('konten')
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-10">
-                <h1 class="mt-3">Heatsink</h1>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button class="btn btn-primary" type="button">Tambah Produk Baru</button>
-                </div>
-                <br>
                 <div>
                     <table class="table">
                         <thead class="table-dark">
@@ -24,23 +16,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach($heatsink as $hs)
                             <tr>
-                                <th scope="row">1</th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <th scope="row">{{$hs->id}}</th>
+                                <td>{{$hs->produkId}}</td>
+                                <td>{{$hs->watt}}</td>
+                                <td>{{$hs->material}}</td>
+                                <td>{{$hs->size}}</td>
+                                <td>{{$hs->weight}}</td>
+                                <td>{{}}</td>
                                 <td>
                                     <a href="" class="badge bg-success">edit</a>
                                     <a href="" class="badge bg-danger">delete</a>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
-                </div>
-            </div>
-        </div>
-    </div>    
+                </div> 
 @endsection

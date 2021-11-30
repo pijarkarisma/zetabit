@@ -2,13 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> ZETABIT | Admin </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZETABIT | ADMIN</title>
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+     <!-- Bootstrap core CSS -->
+     <link href="{{asset('frontend/css/bootstrap.min.css')}}" rel="stylesheet">
+
 </head>
 <body>
-    @yield('konten')
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-10">
+                <h1 class="mt-3">Produk</h1>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="#">
+                        <button class="btn btn-primary" type="button">Tambah Produk Baru</button>
+                    </a>
+                </div>
+                <br>
+                @yield('konten')
+            </div>
+        </div>
+    </div>    
 </body>
 </html>
