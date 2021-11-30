@@ -18,28 +18,28 @@
 
     <form action="{{route('addprocessor')}}" method="POST">
         @csrf
-        <div class="form-row">
+        <div class="form-row pt-4">
             <div class="form-group col-md-6">
-                <label>ID Produk</label>
+                <label>Brand</label>
                 <select name="produkId" class="form-control">
                     @foreach($produks as $produk)
                         <option value="{{$produk->id}}">{{$produk->manufaktur}}</option>
                     @endforeach
                 </select>
             </div>
-            {{-- <div class="form-group col-md-6">
-                <label for="inputEmail4">ID Produk</label>
+            {{-- <div class="form-group col-md-6 pt-3">
+                <label for="inputEmail4">Brand</label>
                 <input type="number" class="form-control" name="produkId">
             </div> --}}
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Tipe Processor</label>
+            <div class="form-group col-md-6 pt-3">
+                <label for="inputPassword4">Model Processor</label>
                 <input type="text" class="form-control" name="tipe">
             </div>
-            <div class="form-group col-md-6">
-                <label for="inputPassword4">Gen</label>
+            <div class="form-group col-md-6 pt-3">
+                <label for="inputPassword4">Generasi</label>
                 <input type="text" class="form-control" name="gen">
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-6 pt-3">
                 <label for="inputPassword4">Deskripsi</label>
                 <input type="text" class="form-control" name="deskripsi">
             </div>
