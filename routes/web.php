@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProcessorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,11 @@ Route::get('/dashboard', function () {
 Route::get('/admin',function(){
     return view('dash/dashboard');
 })->name('admin');
+
+//Processor
+Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
+Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name('addprocessor');
+Route::post('processor', [ProcessorController::class, 'processor'])->name('processor');
 
 Route::get('/admin/produk',function(){
     return view('vga');

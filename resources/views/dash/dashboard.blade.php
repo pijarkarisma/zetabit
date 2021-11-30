@@ -78,33 +78,36 @@
           <div class="container-fluid m-0 p-0">
             <div class="row">
               <div class="col-auto">
-                <div class="p-3 bg-dark h-100 text-white" style="width: 280px;">
+                <div class="p-3 h-100 bg-dark text-white" style="width: 280px;">
                   <a href="/" class="d-flex align-items-center justify-content-center pb-3 mb-3 link-light text-decoration-none border-bottom">
                     <span class="navbar-brand">ZETABIT</span>
                   </a>
                   <ul class="list-unstyled ps-0">
                     <li class="mb-1">
-                      <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                        Produk
+                      <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                        ADD KOMPONEN PC
                       </button>
-                      <div class="collapse show" id="home-collapse">
+                      <div class="collapse" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="#" class="link-light rounded">Overview</a></li>
-                          <li><a href="#" class="link-light rounded">Updates</a></li>
-                          <li><a href="#" class="link-light rounded">Reports</a></li>
+                          <li><a href="{{route('processorform')}}" class="link-light rounded">Processor</a></li>
+                          {{-- <li><a href="#" class="link-light rounded">Motherboard</a></li>
+                          <li><a href="#" class="link-light rounded">Memory</a></li>
+                          <li><a href="#" class="link-light rounded">Graphic Card</a></li>
+                          <li><a href="#" class="link-light rounded">Motherboard</a></li>
+                          <li><a href="#" class="link-light rounded">Case</a></li>
+                          <li><a href="#" class="link-light rounded">Power Supply</a></li>
+                          <li><a href="#" class="link-light rounded">Hard Drive</a></li> --}}
                         </ul>
                       </div>
                     </li>
                     <li class="mb-1">
                       <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        Dashboard
+                        SHOW KOMPONEN PC
                       </button>
                       <div class="collapse" id="dashboard-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="#" class="link-light rounded">Overview</a></li>
-                          <li><a href="#" class="link-light rounded">Weekly</a></li>
-                          <li><a href="#" class="link-light rounded">Monthly</a></li>
-                          <li><a href="#" class="link-light rounded">Annually</a></li>
+                          <li><a href="#" class="link-light rounded">Processor</a></li>
+                         
                         </ul>
                       </div>
                     </li>
@@ -190,6 +193,8 @@
                   </div>
                 </header>
               <!--end of navbar-->
+              <!--Content-->
+              @yield('konten-produk-admin')
               </div>
   
             </div>
