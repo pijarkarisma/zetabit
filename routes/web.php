@@ -8,7 +8,6 @@ use App\Http\Controllers\BatteryController;
 use App\Http\Controllers\VGAController;
 use App\Http\Controllers\LaptopController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProcessorController;
 
 /*
 |--------------------------------------------------------------------------
