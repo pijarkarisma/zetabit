@@ -40,20 +40,22 @@ Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprodu
 Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
 Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name('addprocessor');
 Route::post('processor', [ProcessorController::class, 'processor'])->name('processor');
+Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprocessor');
+Route::post('produk', [ProdukController::class, 'produk'])->name('processor');
 
 Route::get('/admin/produk',function(){
     return view('produ');
 })->name('produk');
 
 
-Route::get('/admin/produk', 'ProdukController@index')->name('produk');
-Route::get('/admin/os','OSController@index')->name('os');
-Route::get('/admin/laptop','LaptopController@index')->name('laptop');
-Route::get('/admin/allinone','LaptopController@index')->name('allinone');
-Route::get('/admin/heatsink','HeatsinkController@index')->name('heatsink');
-Route::get('/admin/battery','BatteryController@index')->name('battery');
-Route::get('/admin/processor','ProcessorController@index')->name('processor');
-Route::get('/admin/vga','VGAController@index')->name('vga');
+// Route::get('/admin/produk', 'ProdukController@index')->name('produk');
+// Route::get('/admin/os','OSController@index')->name('os');
+// Route::get('/admin/laptop','LaptopController@index')->name('laptop');
+// Route::get('/admin/allinone','LaptopController@index')->name('allinone');
+// Route::get('/admin/heatsink','HeatsinkController@index')->name('heatsink');
+// Route::get('/admin/battery','BatteryController@index')->name('battery');
+// Route::get('/admin/processor','ProcessorController@index')->name('processor');
+// Route::get('/admin/vga','VGAController@index')->name('vga');
 
 Route::get('/dash',function(){
     return view('dash/dashboard');

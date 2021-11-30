@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class ProdukController extends Controller
 {
-    public function index(){
+    public function produk(){
         $produk = Produk::all();
         return view('product',['product' => $produk]);
     }
