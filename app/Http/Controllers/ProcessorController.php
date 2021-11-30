@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Processor;
 use App\Models\Produk;
+use App\Http\Controllers\ProdukController;
 use Illuminate\Http\Request;
 
 class ProcessorController extends Controller
@@ -15,7 +16,13 @@ class ProcessorController extends Controller
 
     public function processor(){
         $processors = Processor::all();
-        return view('dash.products.showProcessor',compact('processors'));
+
+        // $processors = DB::table('processor')
+        //     ->select('processor.*','produk.manufaktur')
+        //     ->join('beans','products.idBeans','=','beans.id')
+        //     ->get();
+
+        return view('dash.products.showProcessor', compact('processors'));
     }
 
     public function addProduk(){
@@ -35,12 +42,14 @@ class ProcessorController extends Controller
     public function addProcessor(){
         $processors = new Processor();
         
+        $this->addProduk();
+        
         $processors->produkId = \request('id');
         $processors->tipe = \request('tipe');
         $processors->gen = \request('gen');
         $processors->deskripsi = \request('deskripsi');
 
-        $processors->save();//Insert into table beans(id,beansName, origin, created_at,updated_at) value(?,?,?,?,?);
+        $processors->save();
         return redirect()->route('processorform')->with('success','Processor added successfully');
     }
 }

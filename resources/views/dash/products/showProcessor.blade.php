@@ -1,11 +1,7 @@
 @extends('dash.dashboard')
 
 @section('konten-produk-admin')
-    <div><h2>Add Processor</h2></div>
-
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">All Bean</h1>
-    </div>
+    <div><h2>All Processor</h2></div>
 
     <div class="table-responsive">
         <table class="table table-bordered" width="100%" cellspacing="0">
@@ -13,7 +9,7 @@
                 <th>No</th>
                 <th>ID</th>
                 <th>Tipe Processor</th>
-                <th>Gen</th>
+                <th>Arsitektur</th>
                 <th>Deskripsi</th>
                 <?php $no = 0 ?>
             </thead>

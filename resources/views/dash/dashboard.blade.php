@@ -106,7 +106,7 @@
                       </button>
                       <div class="collapse" id="dashboard-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="#" class="link-light rounded">Processor</a></li>
+                          <li><a href="{{route('processor')}}" class="link-light rounded">Processor</a></li>
                          
                         </ul>
                       </div>

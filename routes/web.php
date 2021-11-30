@@ -39,9 +39,11 @@ Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprodu
 //Processor
 Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
 Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name('addprocessor');
-Route::post('processor', [ProcessorController::class, 'processor'])->name('processor');
-Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprocessor');
-Route::post('produk', [ProdukController::class, 'produk'])->name('processor');
+Route::get('processor', [ProcessorController::class, 'processor'])->name('processor');
+
+
+// Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprocessor');
+// Route::post('produk', [ProdukController::class, 'produk'])->name('processor');
 
 Route::get('/admin/produk',function(){
     return view('produ');
