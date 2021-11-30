@@ -15,20 +15,7 @@
                     </tr>
                 </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Laptop</td>
-                    <td>Dell</td>
-                    <td>Rp 6.500.000,-</td>
-                    <td>100</td>
-                    <td>50</td>
-                    <td>
-                        <a href="#" class="badge bg-success">edit</a>
-                        <a href="#" class="badge bg-danger">delete</a>
-                    </td>
-                </tr>
-                
-                <!-- @foreach($produk as $prdk)
+                @foreach($produk as $prdk)
                 <tr>
                     <th scope="row">{{$prdk->id}}</th>
                     <td>{{prdk->kategori}}</td>
@@ -42,7 +29,7 @@
                         <a href="#" class="badge bg-danger">delete</a>
                     </td>
                 </tr>
-                @endforeach -->
+                @endforeach
             </tbody>
         </table>
     </div>
