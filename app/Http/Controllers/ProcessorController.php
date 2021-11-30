@@ -15,20 +15,27 @@ class ProcessorController extends Controller
 
     public function processor(){
         $processors = Processor::all();
-
-        // $processors = DB::table('processor')
-        //     ->select('processor.*','produk.manufaktur')
-        //     ->join('beans','products.idBeans','=','beans.id')
-        //     ->get();
-
         return view('dash.products.showProcessor',compact('processors'));
+    }
+
+    public function addProduk(){
+        $produks = new Produk();
+
+        $produks->id = \request('id');
+        $produks->kategori = 'processor';
+        $produks->manufaktur = \request('manufaktur');
+        $produks->harga = \request('harga');
+        $produks->stok = \request('stok');
+        $produks->terjual = \request('terjual');
+        $produks->garansi = \request('garansi');
+        $produks->tanggal_rilis = \request('tanggal_rilis');
+        $produks->save();
     }
 
     public function addProcessor(){
         $processors = new Processor();
-
-        //model->columnName = request('field_name');
-        $processors->produkId = \request('produkId');
+        
+        $processors->produkId = \request('id');
         $processors->tipe = \request('tipe');
         $processors->gen = \request('gen');
         $processors->deskripsi = \request('deskripsi');
