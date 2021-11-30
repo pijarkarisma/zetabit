@@ -44,6 +44,17 @@ Route::get('processor', [ProcessorController::class, 'processor'])->name('proces
 
 // Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprocessor');
 // Route::post('produk', [ProdukController::class, 'produk'])->name('processor');
+Route::post('processor', [ProcessorController::class, 'processor'])->name('processor');
+Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addprocessor');
+Route::post('produk', [ProdukController::class, 'produk'])->name('processor');
+Route::get('heatsinkform', [HeatsinkController::class, 'form'])->name('heatsinkform');
+Route::post('addheatsink', [HeatsinkController::class, 'addHeatsink'])->name('addheatsink');
+Route::post('heatsink', [HeatsinkController::class, 'heatsink'])->name('heatsink');
+Route::get('osform', [OSController::class, 'form'])->name('osform');
+Route::post('addos', [OSController::class, 'addOs'])->name('addos');
+Route::post('os', [OSController::class, 'os'])->name('os');
+
+
 
 Route::get('/admin/produk',function(){
     return view('produ');

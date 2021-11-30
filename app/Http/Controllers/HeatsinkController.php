@@ -11,7 +11,7 @@ class HeatsinkController extends Controller
 {
     public function form(){
         $produks = Produk::all();
-        return view('dash.products.addProcessorForm', compact('produks'));
+        return view('dash.products.addHeatsinkForm', compact('produks'));
     }
 
     public function heatsink(){
