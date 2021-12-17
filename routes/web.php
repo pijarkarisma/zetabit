@@ -29,7 +29,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('landing');
 
 Route::get('/admin',function(){
-    return view('dash/dashboard');
+    if (Gate::denies('isAdmin')){
+        abort(403);
+    }
+    else{
+        return view('dash/dashboard');
+    }
 })->name('admin');
 
 Route::get('/shopping-cart', function(){
