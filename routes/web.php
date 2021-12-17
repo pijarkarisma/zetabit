@@ -20,13 +20,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/home', function(){
+    return view('landing');
+})->middleware(['auth','verified'])->name('home');
+
 Route::get('/', function () {
     return view('landing');
-})->middleware(['verified'])->name('home');
-
-Route::get('/dashboard', function () {
-    return view('landing');
-})->middleware(['auth','verified'])->name('landing');
+})->name('landing');
 
 Route::get('/admin',function(){
     if (Gate::denies('isAdmin')){
