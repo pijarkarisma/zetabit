@@ -23,6 +23,7 @@ class User extends Authenticatable
         'phonenumber',
         'address',
         'password',
+        'level'
     ];
 
     /**
@@ -33,7 +34,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'level'
     ];
 
     /**
@@ -44,4 +44,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Set default value of user
+    protected $attributes = array(
+        'level' => 'user'
+    );
 }
