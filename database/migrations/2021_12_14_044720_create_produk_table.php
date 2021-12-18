@@ -19,6 +19,7 @@ class CreateProdukTable extends Migration
             $table->string('brand');
             $table->string('model');
             $table->string('deskripsi');
+            $table->string('garansi');
             $table->double('harga');
             $table->integer('stock');
             $table->integer('terjual');
