@@ -17,17 +17,17 @@
                     </tr>
                 </thead>
             <tbody>
-                @foreach($produks as $produk)
+                @foreach($produk as $produks)
                 <tr>
-                    <th scope="row">{{$produk->id}}</th>
-                    <td align="center">{{produk->kategoriId}}</td>
-                    <td align="center">{{produk->brand}}</td>
-                    <td align="center">{{produk->model}}</td>
-                    <td align="center">{{produk->deskripsi}}</td>
-                    <td align="center">{{produk->garansi}}</td>
-                    <td align="center">{{produk->harga}}</td>
-                    <td align="center">{{produk->stock}}</td>
-                    <td align="center">{{produk->terjual}}</td>
+                    <th scope="row">{{$produks->id}}</th>
+                    <td align="center">{{$produks->kategoriId}}</td>
+                    <td align="center">{{$produks->brand}}</td>
+                    <td align="center">{{$produks->model}}</td>
+                    <td align="center">{{$produks->deskripsi}}</td>
+                    <td align="center">{{$produks->garansi}}</td>
+                    <td align="center">{{$produks->harga}}</td>
+                    <td align="center">{{$produks->stock}}</td>
+                    <td align="center">{{$produks->terjual}}</td>
                 </tr>
                 @endforeach
             </tbody>

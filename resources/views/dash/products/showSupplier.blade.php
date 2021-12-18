@@ -14,11 +14,11 @@
                 <?php $no = 0 ?>
             </thead>
             <tbody>
-            @foreach($processors as $processor)
+            @foreach($supplier as $suppliers)
                 <tr>
                     <td align="center">{{++$no}}</td>
                     <td align="center">{{$suppliers->id}}</td>
-                    <td align="center">{{suppliers->company}}</td>
+                    <td align="center">{{$suppliers->company}}</td>
                     <td align="center">{{$suppliers->email}}</td>
                     <td align="center">{{$suppliers->phoneNumber}}</td>
                     <td align="center">{{$suppliers->address}}</td>
