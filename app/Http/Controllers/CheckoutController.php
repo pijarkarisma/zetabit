@@ -8,9 +8,18 @@ use App\Models\Checkout;
 
 class CheckoutController extends Controller
 {
-    public function checkout(){
+    public function form(){
         $checkout = Checkout::all(); /*select * from checkout*/
-        return view('checkout',['checkout' => $checkout]);
+        return view('dash.addCheckoutForm',['checkout' => $checkout]);
+    }
+    
+    public function checkout(){
+        $checkout = Checkout::join('order','checkout.orderId','=','order.id')
+            ->join('users','order.userId', '=', 'users.id')
+            ->join('delivery','checkout.deliveryId','=','delivery.id')
+            ->get(['checkout.*', 'users.name', 'delivery.courier_name']);
+
+        return view('dash.showCheckoutForm',['checkout' => $checkout]);
     }
 
     public function addCheckout()

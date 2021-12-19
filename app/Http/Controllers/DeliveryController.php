@@ -8,9 +8,14 @@ use App\Models\Delivery;
 
 class DeliveryController extends Controller
 {
+    public function form(){
+        $delivery = Delivery::all(); /*select * from delivery*/
+        return view('dash.addDeliveryForm',['delivery' => $delivery]);
+    }
+
     public function delivery(){
         $delivery = Delivery::all(); /*select * from delivery*/
-        return view('delivery',['delivery' => $delivery]);
+        return view('dash.showDeliveryForm',['delivery' => $delivery]);
     }
 
     public function addDelivery()

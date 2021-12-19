@@ -8,9 +8,21 @@ use App\Models\Stocking;
 
 class StockingController extends Controller
 {
+    public function form(){
+        $stocking = Stocking::all();
+        //return view('dash.addStockForm', compact('stocking'));
+        return view('dash.addStockForm',['stocking' => $stocking]);
+    }
+
     public function stocking(){
-        $stocking = Stocking::all(); /*select * from stocking*/
-        return view('stocking',['stocking' => $stocking]);
+        //$stocking = Stocking::all(); /*select * from stocking*/
+        $stocking = Stocking::join('produk','stockings.productId','=','produk.id')
+            ->join('users','stockings.supplierId','=','users.id')
+            ->join('users','stockings.usersId','=','users.id')
+            ->get(['stockings.*','produk.name', 'users.name', 'users.name']);
+
+        //return view('dash.showStockingForm', compact('stocking'));
+        return view('dash.showStockingForm',['stocking' => $stocking]);
     }
 
     public function addStocking()

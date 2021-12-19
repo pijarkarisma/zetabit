@@ -8,9 +8,17 @@ use App\Models\Order_detail;
 
 class OrderDetailController extends Controller
 {
+    public function form(){
+        $order_details = Order_detail::all();
+        return view('dash.addOrderDetail',['order_detail' => $order_details]);
+    }
+
     public function order_details(){
-        $order_details = Order_detail::all(); /*select * from order_detail*/
-        return view('order_detail',['order_detail' => $order_details]);
+        $order_details = Order_detail::join('order','order_details.orderId','=','order.id')
+            ->join('produk','order_details.productId','=','produk.id')
+            ->get(['order.*', 'produk.name']);
+
+        return view('dash.showOrderDetail',['order_detail' => $order_details]);
     }
 
     public function addOrder()
@@ -24,6 +32,6 @@ class OrderDetailController extends Controller
         $order_details->price = \request('price');
 
         $order_details->save();//Insert into table order_details(orderId, productId, quantity, price) value(?,?,?,?);
-        return redirect()->route('kategoriform')->with('success','Kategori added successfully');
+        return redirect()->route('orderdetailform')->with('success','Order Details added successfully');
     }
 }

@@ -8,9 +8,18 @@ use App\Models\Order;
 
 class OrderController extends Controller
 {
-    public function order(){
+    public function form(){
         $order = Order::all(); /*select * from order*/
-        return view('order',['order' => $order]);
+        return view('dash.addOrderForm',['order' => $order]);
+        //return view('dash.addOrderForm', compact('order'));
+    }
+
+    public function order(){
+        $order = Order::join('users','order.userId','=','users.id')
+            ->get(['order.*', 'kategori.name']);
+
+        return view('dash.showOrderForm',['order' => $order]);
+        //return view('dash.addOrderForm', compact('order'));
     }
 
     public function addOrder()
@@ -22,7 +31,7 @@ class OrderController extends Controller
         $order->orderDate = \request('orderDate');
         $order->userId = \request('userId');
 
-        $order->save();//Insert into table order(id, orderDate, userId) value(?,?,?);
-        return redirect()->route('kategoriform')->with('success','Kategori added successfully');
+        $order->save(); //Insert into table order(id, orderDate, userId) value(?,?,?);
+        return redirect()->route('orderform')->with('success','Order added successfully');
     }
 }

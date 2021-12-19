@@ -12,7 +12,7 @@ class ProcessorController extends Controller
 {
     public function form(){
         // $produks = Produk::all();
-        return view('dash.products.addProcessorForm');
+        return view('dash.products.addProcessorForm', compact());
     }
 
     public function processor(){

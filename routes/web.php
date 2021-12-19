@@ -60,6 +60,7 @@ Route::get('/shopping-cart', function(){
 })->name('cart');
 
 //Produk
+Route::get('produk', [ProdukController::class, 'show'])->name('showproduk');
 Route::get('produkform', [ProdukController::class, 'form'])->name('produkcontroller');
 Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
 

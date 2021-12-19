@@ -85,12 +85,12 @@
                   <ul class="list-unstyled ps-0">
                     <li class="mb-1">
                       <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                        ADD KOMPONEN PC
+                        ADD DATA
                       </button>
                       <div class="collapse" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="{{route('processorform')}}" class="link-light rounded">Processor</a></li>
-                          {{-- <li><a href="#" class="link-light rounded">Motherboard</a></li>
+                          <li><a href="{{route('produkform')}}" class="link-light rounded">Add Product</a></li>
+                          <li><a href="#" class="link-light rounded">Motherboard</a></li>
                           <li><a href="#" class="link-light rounded">Memory</a></li>
                           <li><a href="#" class="link-light rounded">Graphic Card</a></li>
                           <li><a href="#" class="link-light rounded">Motherboard</a></li>
@@ -102,12 +102,11 @@
                     </li>
                     <li class="mb-1">
                       <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-                        SHOW KOMPONEN PC
+                        SHOW DATA
                       </button>
                       <div class="collapse" id="dashboard-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                           <li><a href="{{route('processor')}}" class="link-light rounded">Processor</a></li>
-                         
                         </ul>
                       </div>
                     </li>
