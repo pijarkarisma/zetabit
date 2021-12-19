@@ -23,6 +23,18 @@
       <li>MSI</li>
     </ul>
 
+    <h5 style="color: black">All-In-One PC</h5>
+    <ul style="list-style: none; padding-left: 1rem;">
+      <li>Acer</li>
+      <li>Apple</li>
+      <li>Asus</li>
+      <li>Dell</li>
+      <li>HP</li>
+      <li>Lenovo</li>
+      <li>Toshiba</li>
+      <li>MSI</li>
+    </ul>
+
     <h5 style="color: black">Aksesoris</h5>
     <ul style="list-style: none; padding-left: 1rem;">
       <li>Fan & Cooler</li>

@@ -51,7 +51,7 @@
         {{-- Start of Catalog Content --}}
         <div class="card mt-4">
           <div class="card-body">
-              <h4 style="color: black; padding-bottom:2rem">BELANJA NOTEBOOK</h4>
+              <h4 style="color: black; padding-bottom:2rem">Belanja Notebook</h4>
               <div class="row">
                 <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
                   <img src="{{asset('frontend/image/product-img/komponen-pc/acer-notebook.png')}}" alt="Acer" style="max-width: 120px; max-height:70px"></img>

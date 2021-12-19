@@ -115,7 +115,7 @@
             {{-- Start of Catalog Content --}}
             <div class="card mt-4">
                 <div class="card-body">
-                    <h4 style="color: black; padding-bottom:2rem">BELANJA KOMPONEN PC</h4>
+                    <h4 style="color: black; padding-bottom:2rem">Belanja Komponen PC</h4>
                     <div class="row">
                       <div class="col-lg-4 catalog-category">
                         <div class="row">
