@@ -3,7 +3,7 @@
 @section('konten')
 <style>
   .catalog-category{
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
   }
 </style>
 <div class="album py-3 product-page-bg">
@@ -228,6 +228,7 @@
                     </div>
                 </div>
             </div>
+            {{-- End of catalog content --}}
         </div>
     </div>
 </div>

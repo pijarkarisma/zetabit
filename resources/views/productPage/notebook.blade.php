@@ -1,7 +1,11 @@
 @extends('layouts.main')
 
 @section('konten')
-
+<style>
+  .catalog-category{
+    padding-bottom: 3rem;
+  }
+</style>
 <div class="album py-3 product-page-bg">
     {{-- Breadcrumb --}}
     <nav style="--bs-breadcrumb-divider: '>'; padding-left: 2rem" aria-label="breadcrumb">
@@ -24,6 +28,7 @@
 
       {{-- Main Catalog Page --}}
       <div class="col-md-9">
+        {{-- Start of Catalog Carousel --}}
         <div id="catalogCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active catalog-carousel">
@@ -42,6 +47,48 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+        {{-- End of Catalog Carousel --}}
+        {{-- Start of Catalog Content --}}
+        <div class="card mt-4">
+          <div class="card-body">
+              <h4 style="color: black; padding-bottom:2rem">BELANJA NOTEBOOK</h4>
+              <div class="row">
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/acer-notebook.png')}}" alt="Acer" style="max-width: 120px; max-height:70px"></img>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/apple-notebook.png')}}" alt="Apple" style="max-width: 120px; max-height:70px"></img>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/asus-notebook.png')}}" alt="Asus" style="max-width: 120px; max-height: 70px"></img>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/dell-notebook.png')}}" alt="Dell" style="max-width: 120px; max-height: 70px"></img>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/hp-notebook.png')}}" alt="HP" style="max-width: 120px; max-height: 70px"></img>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/lenovo-notebook.png')}}" alt="Lenovo" style="max-width: 120px; max-height: 70px"></img>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/toshiba-notebook.png')}}" alt="Toshiba" style="max-width: 120px; max-height: 70px"></img>
+                </div>
+
+                <div class="col-lg-4 d-flex justify-content-center align-items-center catalog-category">
+                  <img src="{{asset('frontend/image/product-img/komponen-pc/msi-notebook.png')}}" alt="MSI" style="max-width: 120px; max-height: 70px"></img>
+                </div>
+
+              </div>
+          </div>
+      </div>
+      {{-- End of catalog content --}}
       </div>
     </div>
 </div>
