@@ -50,6 +50,11 @@ Route::get('/notebook', function () {
     return view('productPage.notebook');
 })->name('notebook');
 
+//Halaman All-In-One PC
+Route::get('/aio-pc', function () {
+    return view('productPage.aiopc');
+})->name('aiopc');
+
 Route::get('/shopping-cart', function(){
     return view('cart');
 })->name('cart');

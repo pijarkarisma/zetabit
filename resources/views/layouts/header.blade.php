@@ -148,7 +148,7 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toogle top-menubar" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link top-menubar" href="{{route('aiopc')}}">
                 ALL-IN-ONE PC
               </a>
               <ul class="dropdown-menu">
