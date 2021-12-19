@@ -45,6 +45,11 @@ Route::get('/komponen-pc', function () {
     return view('productPage.komponenpc');
 })->name('komponenpc');
 
+//Halaman Notebook
+Route::get('/notebook', function () {
+    return view('productPage.notebook');
+})->name('notebook');
+
 Route::get('/shopping-cart', function(){
     return view('cart');
 })->name('cart');
