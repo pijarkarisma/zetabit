@@ -20,14 +20,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//Redirect after login or register
 Route::get('/home', function(){
     return view('landing');
-})->middleware(['auth','verified'])->name('home');
+})->middleware(['auth','verified','prevent-back-history'])->name('home');
 
+//Homepage
 Route::get('/', function () {
     return view('landing');
-})->name('landing');
+})->middleware('prevent-back-history')->name('landing');
 
+//Redirect if admin
 Route::get('/admin',function(){
     if (Gate::denies('isAdmin')){
         abort(403);
@@ -35,7 +38,12 @@ Route::get('/admin',function(){
     else{
         return view('dash/dashboard');
     }
-})->name('admin');
+})->middleware('prevent-back-history')->name('admin');
+
+//Halaman Komponen PC
+Route::get('/komponen-pc', function () {
+    return view('productPage.komponenpc');
+})->name('komponenpc');
 
 Route::get('/shopping-cart', function(){
     return view('cart');

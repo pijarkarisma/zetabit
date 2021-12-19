@@ -28,6 +28,16 @@
         background-image: linear-gradient(rgb(228, 228, 228), whitesmoke);
       }
 
+      /* BREADCRUMB */
+      #breadcrumb-inactive{
+        text-decoration: none;
+        color:black;
+      }
+
+      #breadcrumb-inactive:hover{
+        color:rgb(66, 186, 150);
+      }
+
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;

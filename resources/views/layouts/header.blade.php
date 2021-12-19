@@ -5,7 +5,9 @@
             <div class="nav justify-content-end">
                 <ul class="nav nav-top-kontenkanan">
                     <li class="nav-item">
+                      @if (Auth::user()->level == 'admin')
                         <a class="nav-link top-kontenkanan" href="{{ route('admin') }}">Admin Dashboard</a>
+                      @endif
                     </li>           
                     <li class="nav-item">
                         <a5 class="nav-link top-kontenkanan" href="#">Wishlist</a5>
@@ -82,7 +84,7 @@
                                 <div class="row">
                                     @csrf
                                     @auth
-                                    <a class="signin-register text-decoration-none" href="{{ route('home') }}">{{ Auth::user()->name }}</a>
+                                    <a class="signin-register text-decoration-none" href="#">{{ Auth::user()->name }}</a>
                                     @else
                                     <a class="signin-register text-decoration-none" href="{{ route('login') }}">Masuk / Daftar</a>
                                     @endauth
@@ -116,7 +118,7 @@
     <div class="nav menubar-bawah justify-content-start">
         <ul class="nav nav-bottom-menubar">
             <li class="nav-item dropdown">
-                <a class="nav-link top-menubar" href="#">
+                <a class="nav-link top-menubar" href="{{route('komponenpc')}}">
                   KOMPONEN PC
                 </a>
                 <ul class="dropdown-menu">
