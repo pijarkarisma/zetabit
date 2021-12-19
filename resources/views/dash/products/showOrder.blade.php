@@ -5,17 +5,18 @@
     <table class="table">
         <thead align="center">
             <tr>
-                <th scope="row">ID</th>
+                <th scope="col">No</th>
                 <th scope="col">Order Date</th>
-                <th scope="col">User Id</th>
+                <th scope="col">Employee</th>
+                <?php $no = 0 ?>
             </tr>
         </thead>
         <tbody>
             @foreach($order as $orders)
             <tr>
-                <th scope="row">{{$orders->id}}</th>
+                <td align="center">{{++$no}}</td>
                 <td align="center">{{$orders->orderDate}}</td>
-                <td align="center">{{$orders->userId}}</td>
+                <td align="center">{{$orders->name}}</td>
             </tr>
             @endforeach
         </tbody>

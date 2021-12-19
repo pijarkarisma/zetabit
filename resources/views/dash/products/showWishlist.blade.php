@@ -1,7 +1,7 @@
 @extends('dash.dashboard')
 
 @section('konten-produk-admin')
-    <div><h2>All Supplier</h2></div>
+    <div><h2>All Wishlist</h2></div>
 
     <div class="table-responsive">
         <table class="table table-bordered" width="100%" cellspacing="0">

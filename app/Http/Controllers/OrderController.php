@@ -16,7 +16,7 @@ class OrderController extends Controller
 
     public function order(){
         $order = Order::join('users','order.userId','=','users.id')
-            ->get(['order.*', 'kategori.name']);
+            ->get(['order.*', 'kategori.kategoriName']);
 
         return view('dash.showOrderForm',['order' => $order]);
         //return view('dash.addOrderForm', compact('order'));

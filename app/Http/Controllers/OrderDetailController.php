@@ -16,7 +16,7 @@ class OrderDetailController extends Controller
     public function order_details(){
         $order_details = Order_detail::join('order','order_details.orderId','=','order.id')
             ->join('produk','order_details.productId','=','produk.id')
-            ->get(['order.*', 'produk.name']);
+            ->get(['order.*', 'produk.produkName']);
 
         return view('dash.showOrderDetail',['order_detail' => $order_details]);
     }

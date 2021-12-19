@@ -17,7 +17,7 @@ class ProdukController extends Controller
         //$produk = Produk::all(); /*select * from produk*/
         
         $produk = Produk::join('kategori','produk.kategoriId','=','kategori.id')
-            ->get(['produk.*', 'kategori.name']);
+            ->get(['produk.*', 'kategori.kategoriName']);
 
         return view('dash.products.showProcessor', compact('produk'));
     }
@@ -29,7 +29,7 @@ class ProdukController extends Controller
         //model->columnName = request('field_name');
         $produk->id = \request('id');
         $produk->kategoriId = \request('kategoriId');
-        $produk->name = \request('name');
+        $produk->produkName = \request('produkName');
         $produk->brand = \request('brand');
         $produk->model = \request('model');
         $produk->deskripsi = \request('deskripsi');

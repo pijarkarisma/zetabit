@@ -19,7 +19,7 @@ class StockingController extends Controller
         $stocking = Stocking::join('produk','stockings.productId','=','produk.id')
             ->join('users','stockings.supplierId','=','users.id')
             ->join('users','stockings.usersId','=','users.id')
-            ->get(['stockings.*','produk.name', 'users.name', 'users.name']);
+            ->get(['stockings.*','produk.produkName', 'users.name', 'users.name']);
 
         //return view('dash.showStockingForm', compact('stocking'));
         return view('dash.showStockingForm',['stocking' => $stocking]);
