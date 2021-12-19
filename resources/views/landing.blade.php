@@ -608,13 +608,16 @@
 
     <div class="row py-4 justify-content-center">
         <div class="col-sm-auto">
-          <img class="bd-placeholder-img rounded-circle" width="100" height="100" src="{{asset('frontend/image/categories/processor.png')}}" role="img" aria-label="Placeholder: 100x100" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Komponen PC</title><rect width="100%" height="100%" fill="#777"/></img>
+          <a href="{{route('komponenpc')}}"><img class="bd-placeholder-img rounded-circle" width="100" height="100" 
+          src="{{asset('frontend/image/categories/processor.png')}}" alt="komponen pc"></a>
         </div>
         <div class="col-sm-auto">
-          <img class="bd-placeholder-img rounded-circle" width="100" height="100" src="{{asset('frontend/image/categories/notebook.png')}}" role="img" aria-label="Placeholder: 100x100" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Komponen PC</title><rect width="100%" height="100%" fill="#777"/></img>
+          <a href="{{route('notebook')}}"><img class="bd-placeholder-img rounded-circle" width="100" height="100" 
+          src="{{asset('frontend/image/categories/notebook.png')}}" alt="komponen pc"></a>
         </div>
         <div class="col-sm-auto">
-          <img class="bd-placeholder-img rounded-circle" width="100" height="100" src="{{asset('frontend/image/categories/aio.png')}}" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
+          <a href="{{route('aiopc')}}"><img class="bd-placeholder-img rounded-circle" width="100" height="100" 
+            src="{{asset('frontend/image/categories/aio.png')}}" alt="komponen pc"></a>
         </div>
         <div class="col-sm-auto">
           <img class="bd-placeholder-img rounded-circle" width="100" height="100" src="{{asset('frontend/image/categories/accessories.png')}}" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/></img>
