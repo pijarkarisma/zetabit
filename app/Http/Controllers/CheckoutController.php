@@ -10,7 +10,7 @@ class CheckoutController extends Controller
 {
     public function form(){
         $checkout = Checkout::all(); /*select * from checkout*/
-        return view('dash.addCheckoutForm',['checkout' => $checkout]);
+        return view('dash.products.addCheckoutForm',['checkout' => $checkout]);
     }
     
     public function checkout(){
@@ -19,7 +19,7 @@ class CheckoutController extends Controller
             ->join('delivery','checkout.deliveryId','=','delivery.id')
             ->get(['checkout.*', 'users.name', 'delivery.courier_name']);
 
-        return view('dash.showCheckoutForm',['checkout' => $checkout]);
+        return view('dash.products.showCheckoutForm',['checkout' => $checkout]);
     }
 
     public function addCheckout()

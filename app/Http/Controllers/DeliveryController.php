@@ -10,12 +10,12 @@ class DeliveryController extends Controller
 {
     public function form(){
         $delivery = Delivery::all(); /*select * from delivery*/
-        return view('dash.addDeliveryForm',['delivery' => $delivery]);
+        return view('dash.products.addDeliveryForm',['delivery' => $delivery]);
     }
 
     public function delivery(){
         $delivery = Delivery::all(); /*select * from delivery*/
-        return view('dash.showDeliveryForm',['delivery' => $delivery]);
+        return view('dash.products.showDeliveryForm',['delivery' => $delivery]);
     }
 
     public function addDelivery()

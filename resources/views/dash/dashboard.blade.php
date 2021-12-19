@@ -89,14 +89,8 @@
                       </button>
                       <div class="collapse" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="{{route('produkform')}}" class="link-light rounded">Add Product</a></li>
-                          <li><a href="#" class="link-light rounded">Motherboard</a></li>
-                          <li><a href="#" class="link-light rounded">Memory</a></li>
-                          <li><a href="#" class="link-light rounded">Graphic Card</a></li>
-                          <li><a href="#" class="link-light rounded">Motherboard</a></li>
-                          <li><a href="#" class="link-light rounded">Case</a></li>
-                          <li><a href="#" class="link-light rounded">Power Supply</a></li>
-                          <li><a href="#" class="link-light rounded">Hard Drive</a></li> --}}
+                          <li><a href="{{route('kategoriform')}}" class="link-light rounded">Category</a></li>
+                          <li><a href="{{route('produkform')}}" class="link-light rounded">Product</a></li>
                         </ul>
                       </div>
                     </li>
@@ -106,7 +100,8 @@
                       </button>
                       <div class="collapse" id="dashboard-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="{{route('processor')}}" class="link-light rounded">Processor</a></li>
+                          <li><a href="{{route('kategori')}}" class="link-light rounded">Category</a></li>
+                          <li><a href="{{route('produk')}}" class="link-light rounded">Product</a></li>
                         </ul>
                       </div>
                     </li>

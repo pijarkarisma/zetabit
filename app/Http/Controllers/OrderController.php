@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function form(){
         $order = Order::all(); /*select * from order*/
-        return view('dash.addOrderForm',['order' => $order]);
+        return view('dash.products.addOrderForm',['order' => $order]);
         //return view('dash.addOrderForm', compact('order'));
     }
 
@@ -18,7 +18,7 @@ class OrderController extends Controller
         $order = Order::join('users','order.userId','=','users.id')
             ->get(['order.*', 'kategori.kategoriName']);
 
-        return view('dash.showOrderForm',['order' => $order]);
+        return view('dash.products.showOrderForm',['order' => $order]);
         //return view('dash.addOrderForm', compact('order'));
     }
 

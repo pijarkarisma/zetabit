@@ -11,7 +11,7 @@ class StockingController extends Controller
     public function form(){
         $stocking = Stocking::all();
         //return view('dash.addStockForm', compact('stocking'));
-        return view('dash.addStockForm',['stocking' => $stocking]);
+        return view('dash.products.addStockForm',['stocking' => $stocking]);
     }
 
     public function stocking(){
@@ -22,7 +22,7 @@ class StockingController extends Controller
             ->get(['stockings.*','produk.produkName', 'users.name', 'users.name']);
 
         //return view('dash.showStockingForm', compact('stocking'));
-        return view('dash.showStockingForm',['stocking' => $stocking]);
+        return view('dash.products.showStockingForm',['stocking' => $stocking]);
     }
 
     public function addStocking()

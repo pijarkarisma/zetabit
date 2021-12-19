@@ -10,12 +10,12 @@ class SupplierController extends Controller
 {
     public function form(){
         $supplier = Supplier::all(); /*select * from supplier*/
-        return view('dash.addSupplierForm',['supplier' => $supplier]);
+        return view('dash.products.addSupplierForm',['supplier' => $supplier]);
     }
 
     public function supplier(){
         $supplier = Supplier::all(); /*select * from supplier*/
-        return view('dash.showSupplierForm',['supplier' => $supplier]);
+        return view('dash.products.showSupplierForm',['supplier' => $supplier]);
     }
 
     public function addSupplier()

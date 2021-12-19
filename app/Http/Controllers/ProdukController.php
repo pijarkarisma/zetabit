@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Produk;
+use App\Models\Kategori;
 
 class ProdukController extends Controller
 {
     public function form(){
-        $produk = Produk::all();
-        return view('dash.addProdukForm', compact('produk'));
+        $kategori = Kategori::all();
+        return view('dash.products.addProdukForm', compact('kategori'));
     }
 
     public function produk(){
@@ -19,7 +20,7 @@ class ProdukController extends Controller
         $produk = Produk::join('kategori','produk.kategoriId','=','kategori.id')
             ->get(['produk.*', 'kategori.kategoriName']);
 
-        return view('dash.products.showProcessor', compact('produk'));
+        return view('dash.products.showProduk', compact('produk'));
     }
 
     public function addProduk()

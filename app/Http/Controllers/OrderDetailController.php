@@ -10,7 +10,7 @@ class OrderDetailController extends Controller
 {
     public function form(){
         $order_details = Order_detail::all();
-        return view('dash.addOrderDetail',['order_detail' => $order_details]);
+        return view('dash.products.addOrderDetail',['order_detail' => $order_details]);
     }
 
     public function order_details(){
@@ -18,7 +18,7 @@ class OrderDetailController extends Controller
             ->join('produk','order_details.productId','=','produk.id')
             ->get(['order.*', 'produk.produkName']);
 
-        return view('dash.showOrderDetail',['order_detail' => $order_details]);
+        return view('dash.products.showOrderDetail',['order_detail' => $order_details]);
     }
 
     public function addOrder()

@@ -10,14 +10,14 @@ class WishlistController extends Controller
 {
     public function form(){
         $wishlist = Wishlist::all(); /*select * from wishlist*/
-        return view('dash.addWishlistForm',['wishlist' => $wishlist]);
+        return view('dash.products.addWishlistForm',['wishlist' => $wishlist]);
     }
     
     public function wishlist(){
         $wishlist = Wishlist::join('produk','wishlist.productId','=','produk.id')
             ->join('users','wishlist.userId','=','users.id')
             ->get(['wishlist.*', 'produk.produkName', 'user.name']);
-        return view('dash.showWishlistForm',['wishlist' => $wishlist]);
+        return view('dash.products.showWishlistForm',['wishlist' => $wishlist]);
     }
 
     public function addWishlist()

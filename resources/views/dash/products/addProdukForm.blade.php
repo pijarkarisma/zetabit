@@ -1,7 +1,7 @@
 @extends('dash.dashboard')
 
 @section('konten-produk-admin')
-    <div><h2>Add Processor</h2></div>
+    <div><h2>Add Produk</h2></div>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
@@ -16,37 +16,41 @@
         </div>
     @endif
 
-    <form action="{{route('addprocessor')}}" method="POST">
+    <form action="{{route('addproduk')}}" method="POST">
         @csrf
         <div class="form-row pt-4">
-            {{-- <div class="form-group col-md-6">
-                <label>Brand</label>
-                <select name="produkId" class="form-control">
-                    @foreach($produks as $produk)
-                        <option value="{{$produk->id}}">{{$produk->manufaktur}}</option>
+            <div class="form-group col-md-6">
+                <label>Category</label>
+                <select name="kategoriId" class="form-control">
+                    @foreach($kategori as $categories)
+                        <option value="{{$categories->id}}">{{$categories->kategoriName}}</option>
                     @endforeach
                 </select>
-            </div> --}}
-            {{-- <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Brand</label>
-                <input type="number" class="form-control" name="produkId">
-            </div> --}}
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">ID Kategori</label>
-                <input type="number" class="form-control" name="kategoriid">
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Brand</label>
+                <label for="inputEmail4">Name</label>
+                <input type="text" class="form-control" name="produkName">
+            </div>
+            <div class="form-group col-md-6 pt-3">
+                <label for="inputEmail4">Brand</label>
                 <input type="text" class="form-control" name="brand">
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Model</label>
+                <label for="inputEmail4">Model</label>
                 <input type="text" class="form-control" name="model">
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Deskripsi</label>
+                <label for="inputEmail4">Description</label>
                 <input type="text" class="form-control" name="deskripsi">
             </div>
+            <div class="form-group col-md-6 pt-3">
+                <label for="inputEmail4">Garansi</label>
+                <input type="text" class="form-control" name="deskripsi">
+            </div>
+            <!-- <div class="form-group col-md-6 pt-3">
+                <label for="inputEmail4">Image</label>
+                <input type="text" class="form-control" name="deskripsi">
+            </div> -->
             <div class="form-group col-md-6 pt-3">
                 <label for="inputPassword4">Harga</label>
                 <input type="number" class="form-control" name="harga">
@@ -59,18 +63,6 @@
                 <label for="inputPassword4">Terjual</label>
                 <input type="number" class="form-control" name="terjual">
             </div>
-            {{-- <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Model Processor</label>
-                <input type="text" class="form-control" name="tipe">
-            </div>
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Generasi</label>
-                <input type="text" class="form-control" name="gen">
-            </div>
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Deskripsi</label>
-                <input type="text" class="form-control" name="deskripsi">
-            </div> --}}
         </div>
 
         <button type="submit" class="btn btn-primary mt-4">Add</button>
