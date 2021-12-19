@@ -4,7 +4,7 @@
       <li>CPU / Processor</li>
       <li>Motherboard</li>
       <li>Memory</li>
-      <li>Graphic Card</li>
+      <li>GPU / Graphic Card</li>
       <li>Motherboard</li>
       <li>Case</li>
       <li>Power Supply</li>
