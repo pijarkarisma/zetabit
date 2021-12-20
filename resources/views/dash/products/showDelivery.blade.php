@@ -1,9 +1,10 @@
 @extends('dash.dashboard')
 
 @section('konten-produk-admin')
-<div>
-    <table class="table">
-        <thead align="center">
+<div><h2>All Delivery</h2></div>
+<div class="table-responsive">
+    <table class="table table-bordered" width="100%" cellspacing="0">
+        <thead align="center">    
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Company</th>
@@ -12,7 +13,7 @@
                 
             </tr>
         </thead>
-        <tbody>
+        <tbody align="center">
             @foreach($delivery as $deliveries)
             <tr>
                 <td align="center">{{++$no}}</td>

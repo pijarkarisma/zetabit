@@ -91,6 +91,8 @@
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                           <li><a href="{{route('kategoriform')}}" class="link-light rounded">Category</a></li>
                           <li><a href="{{route('produkform')}}" class="link-light rounded">Product</a></li>
+                          <li><a href="{{route('deliveryform')}}" class="link-light rounded">Delivery</a></li>
+                          <li><a href="{{route('supplierform')}}" class="link-light rounded">Supplier</a></li>
                         </ul>
                       </div>
                     </li>
@@ -102,6 +104,8 @@
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                           <li><a href="{{route('showkategori')}}" class="link-light rounded">Category</a></li>
                           <li><a href="{{route('showproduk')}}" class="link-light rounded">Product</a></li>
+                          <li><a href="{{route('showdelivery')}}" class="link-light rounded">Delivery</a></li>
+                          <li><a href="{{route('showsupplier')}}" class="link-light rounded">Supplier</a></li>
                         </ul>
                       </div>
                     </li>

@@ -1,8 +1,9 @@
 @extends('dash.dashboard')
 
 @section('konten-produk-admin')
-<div>
-    <table class="table">
+<div><h2>All Stocks</h2></div>
+<div class="table-responsive">
+    <table class="table table-bordered" width="100%" cellspacing="0">
         <thead align="center">
             <tr>
                 <th scope="col">No</th>
@@ -15,7 +16,7 @@
                 <?php $no = 0 ?>
             </tr>
         </thead>
-        <tbody>
+        <tbody align="center">
             @foreach($stocking as $stockings)
             <tr>
                 <td align="center">{{++$no}}</td>

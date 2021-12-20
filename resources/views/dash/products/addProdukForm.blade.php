@@ -45,12 +45,12 @@
             </div>
             <div class="form-group col-md-6 pt-3">
                 <label for="inputEmail4">Garansi</label>
-                <input type="text" class="form-control" name="deskripsi">
+                <input type="text" class="form-control" name="garansi">
             </div>
-            <!-- <div class="form-group col-md-6 pt-3">
+            <div class="form-group col-md-6 pt-3">
                 <label for="inputEmail4">Image</label>
-                <input type="text" class="form-control" name="deskripsi">
-            </div> -->
+                <input type="text" class="form-control" name="image">
+            </div>
             <div class="form-group col-md-6 pt-3">
                 <label for="inputPassword4">Harga</label>
                 <input type="number" class="form-control" name="harga">

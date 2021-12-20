@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\HeatsinkController;
-use App\Http\Controllers\ProcessorController;
+use App\Http\Controllers\DeliveryController;
+use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BatteryController;
 use App\Http\Controllers\VGAController;
 use App\Http\Controllers\LaptopController;

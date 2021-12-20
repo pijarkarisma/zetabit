@@ -21,7 +21,7 @@
         <div class="form-row pt-4">
             <div class="form-group col-md-6 pt-3">
                 <label for="inputEmail4">ID</label>
-                <input type="number" class="form-control" name="kategoriId">
+                <input type="number" class="form-control" name="id">
             </div>
             <div class="form-group col-md-6 pt-3">
                 <label for="inputEmail4">Category Name</label>
