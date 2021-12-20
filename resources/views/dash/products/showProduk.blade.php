@@ -17,6 +17,7 @@
                     <th scope="col">Price</th>
                     <th scope="col">Stock</th>
                     <th scope="col">Sold</th>
+                    <th colspan=2>Action</th>
                     <?php $no = 0 ?>
                 </tr>
             </thead>
@@ -34,6 +35,8 @@
                     <td align="center">{{$produks->harga}}</td>
                     <td align="center">{{$produks->stock}}</td>
                     <td align="center">{{$produks->terjual}}</td>
+                    <td align="center"><a href="#"><button type="button" class="btn btn-success">Edit</button></a></td>
+                    <td align="center"><a href="#"><button type="button" class="btn btn-danger">Delete</button></a></td>
                 </tr>
                 @endforeach
             </tbody>
