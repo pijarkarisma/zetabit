@@ -7,6 +7,7 @@ use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\BatteryController;
 use App\Http\Controllers\VGAController;
 use App\Http\Controllers\LaptopController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +40,14 @@ Route::get('/admin',function(){
         return view('dash/dashboard');
     }
 })->middleware('prevent-back-history')->name('admin');
+
+//Halaman Profile
+Route::get('/profile', [UserController::class, 'profile'])->name('profile');
+Route::post('/profile', [UserController::class, 'update_profile'])->name('updateprofile');
+// Route::get('profile', 'UserController@profile');
+// Route::get('/profile', function(){
+//     return view('layouts.profile');
+// })->name('profile');
 
 //Halaman Komponen PC
 Route::get('/komponen-pc', function () {
