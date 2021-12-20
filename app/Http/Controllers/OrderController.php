@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
-use App\Models\Users;
+use App\Models\User;
 
 class OrderController extends Controller
 {
     public function form(){
-        $user = Users::all(); /*select * from order*/
+        $user = User::all(); /*select * from order*/
         //return view('dash.products.addOrderForm',['order' => $order]);
         return view('dash.products.addOrderForm', compact('user'));
     }
@@ -20,7 +20,7 @@ class OrderController extends Controller
             ->get(['order.*', 'kategori.kategoriName']);
 
         //return view('dash.products.showOrderForm',['order' => $order]);
-        return view('dash.products.addOrderForm', compact('order'));
+        return view('dash.products.showOrder', compact('order'));
     }
 
     public function addOrder()

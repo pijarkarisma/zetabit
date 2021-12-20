@@ -15,7 +15,7 @@ class SupplierController extends Controller
 
     public function supplier(){
         $supplier = Supplier::all(); /*select * from supplier*/
-        return view('dash.products.showSupplierForm',['supplier' => $supplier]);
+        return view('dash.products.showSupplier',['supplier' => $supplier]);
     }
 
     public function addSupplier()

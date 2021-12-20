@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Checkout;
+use App\Models\Order;
+use App\Models\Delivery;
 
 class CheckoutController extends Controller
 {
     public function form(){
-        $checkout = Checkout::all(); /*select * from checkout*/
-        return view('dash.products.addCheckoutForm',['checkout' => $checkout]);
+        $order = Order::all(); /*select * from order*/
+        $delivery = Delivery::all(); /*select * from order*/
+        return view('dash.products.addCheckoutForm', compact('order','delivery'));
+        //return view('dash.products.addCheckoutForm',['checkout' => $checkout]);
     }
     
     public function checkout(){
@@ -19,7 +23,8 @@ class CheckoutController extends Controller
             ->join('delivery','checkout.deliveryId','=','delivery.id')
             ->get(['checkout.*', 'users.name', 'delivery.courier_name']);
 
-        return view('dash.products.showCheckoutForm',['checkout' => $checkout]);
+        return view('dash.products.showCheckout', compact('order'));    
+        //return view('dash.products.showCheckout',['checkout' => $checkout]);
     }
 
     public function addCheckout()

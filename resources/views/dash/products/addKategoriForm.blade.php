@@ -20,7 +20,7 @@
         @csrf
         <div class="form-row pt-4">
             <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">ID</label>
+                <label for="inputEmail4">ID</label>
                 <input type="number" class="form-control" name="kategoriId">
             </div>
             <div class="form-group col-md-6 pt-3">

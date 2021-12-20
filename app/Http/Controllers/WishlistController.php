@@ -17,7 +17,8 @@ class WishlistController extends Controller
         $wishlist = Wishlist::join('produk','wishlist.productId','=','produk.id')
             ->join('users','wishlist.userId','=','users.id')
             ->get(['wishlist.*', 'produk.produkName', 'user.name']);
-        return view('dash.products.showWishlistForm',['wishlist' => $wishlist]);
+        return view('dash.products.showWishlist', compact('wishlist'));
+        //return view('dash.products.showWishlist',['wishlist' => $wishlist]);
     }
 
     public function addWishlist()

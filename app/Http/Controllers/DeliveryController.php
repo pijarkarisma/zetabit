@@ -16,7 +16,7 @@ class DeliveryController extends Controller
 
     public function delivery(){
         $delivery = Delivery::all(); /*select * from delivery*/
-        return view('dash.products.showDeliveryForm',compact('delivery'));
+        return view('dash.products.showDelivery',compact('delivery'));
         //return view('dash.products.showDeliveryForm',['delivery' => $delivery]);
     }
 

@@ -16,7 +16,7 @@ class KategoriController extends Controller
 
     public function kategori(){
         $kategori = Kategori::all(); /*select * from kategori*/
-        return view('dash.products.showKategoriForm',compact('kategori'));
+        return view('dash.products.showKategori',compact('kategori'));
         //return view('dash.products.showKategoriForm',['kategori' => $kategori]);
     }
 

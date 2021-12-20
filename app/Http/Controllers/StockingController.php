@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Stocking;
+use App\Models\Produk;
+use App\Models\User;
 
 class StockingController extends Controller
 {
     public function form(){
-        $stocking = Stocking::all();
-        //return view('dash.addStockForm', compact('stocking'));
-        return view('dash.products.addStockForm',['stocking' => $stocking]);
+        $user = User::all();
+        $produk = Produk::all();
+        return view('dash.addStockForm', compact('user','produk'));
+        //return view('dash.products.addStockForm',['stocking' => $stocking]);
     }
 
     public function stocking(){
@@ -21,8 +24,8 @@ class StockingController extends Controller
             ->join('users','stockings.usersId','=','users.id')
             ->get(['stockings.*','produk.produkName', 'users.name', 'users.name']);
 
-        //return view('dash.showStockingForm', compact('stocking'));
-        return view('dash.products.showStockingForm',['stocking' => $stocking]);
+        return view('dash.showStocking', compact('stocking'));
+        //return view('dash.products.showStockingForm',['stocking' => $stocking]);
     }
 
     public function addStocking()
