@@ -44,10 +44,6 @@ Route::get('/admin',function(){
 //Halaman Profile
 Route::get('/profile', [UserController::class, 'profile'])->name('profile');
 Route::post('/profile', [UserController::class, 'update_profile'])->name('updateprofile');
-// Route::get('profile', 'UserController@profile');
-// Route::get('/profile', function(){
-//     return view('layouts.profile');
-// })->name('profile');
 
 //Halaman Komponen PC
 Route::get('/komponen-pc', function () {
