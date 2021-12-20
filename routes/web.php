@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\HeatsinkController;
-use App\Http\Controllers\ProcessorController;
-use App\Http\Controllers\BatteryController;
-use App\Http\Controllers\VGAController;
-use App\Http\Controllers\LaptopController;
+use App\Http\Controllers\DeliveryController;
+use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\StockingController;
+use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckAvatarController;
 use Illuminate\Support\Facades\Route;
@@ -91,6 +93,32 @@ Route::post('adddelivery', [DeliveryController::class, 'addDelivery'])->name('ad
 Route::get('supplier', [SupplierController::class, 'supplier'])->name('showsupplier');
 Route::get('supplierform', [SupplierController::class, 'form'])->name('supplierform');
 Route::post('addsupplier', [SupplierController::class, 'addSupplier'])->name('addsupplier');
+
+//Checkout
+Route::get('payment', [CheckoutController::class, 'payment'])->name('showpayment');
+Route::get('shipped', [CheckoutController::class, 'shipped'])->name('showshipped');
+Route::get('checkoutform', [CheckoutController::class, 'form'])->name('checkoutform');
+Route::post('addcheckout', [CheckoutController::class, 'addCheckout'])->name('addcheckout');
+
+//Stocking
+Route::get('stocking', [StockingController::class, 'stocking'])->name('showstocking');
+Route::get('stockingform', [StockingController::class, 'form'])->name('stockingform');
+Route::post('addstocking', [StockingController::class, 'addStocking'])->name('addstocking');
+
+//Order
+Route::get('order', [OrderController::class, 'order'])->name('showorder');
+Route::get('orderform', [OrderController::class, 'form'])->name('orderform');
+Route::post('addorder', [OrderController::class, 'addOrder'])->name('addorder');
+
+//Order_Details
+Route::get('order_details', [OrderDetailController::class, 'order_details'])->name('showorderdetail');
+Route::get('orderform', [OrderDetailController::class, 'form'])->name('orderorderdetail');
+Route::post('addorderdetail', [OrderDetailController::class, 'addOrderDetail'])->name('addorderdetail');
+
+//Wishlist
+Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('showwishlist');
+Route::get('wishlistform', [WishlistController::class, 'form'])->name('wishlistform');
+Route::post('addwishlist', [WishlistController::class, 'addWishlist'])->name('addwishlist');
 
 // //Processor
 // Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');

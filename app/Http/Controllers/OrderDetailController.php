@@ -26,7 +26,7 @@ class OrderDetailController extends Controller
         //return view('dash.products.showOrderDetail',['order_detail' => $order_details]);
     }
 
-    public function addOrder()
+    public function addOrderDetail()
     {
         $order_details = new Order_detail();
 

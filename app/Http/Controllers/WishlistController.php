@@ -5,18 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Wishlist;
+use App\Models\Produk;
+use App\Models\User;
 
 class WishlistController extends Controller
 {
     public function form(){
-        $wishlist = Wishlist::all(); /*select * from wishlist*/
-        return view('dash.products.addWishlistForm',['wishlist' => $wishlist]);
+        $user = User::all(); /*select * from order*/
+        $produk = Produk::all(); /*select * from order*/
+        //return view('dash.products.addOrderForm',['order' => $order]);
+        return view('dash.products.addWishlistForm', compact('user','produk'));
     }
     
     public function wishlist(){
         $wishlist = Wishlist::join('produk','wishlist.productId','=','produk.id')
             ->join('users','wishlist.userId','=','users.id')
-            ->get(['wishlist.*', 'produk.produkName', 'user.name']);
+            ->get(['wishlist.*', 'produk.produkName', 'users.name']);
         return view('dash.products.showWishlist', compact('wishlist'));
         //return view('dash.products.showWishlist',['wishlist' => $wishlist]);
     }

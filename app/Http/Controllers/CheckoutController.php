@@ -17,14 +17,22 @@ class CheckoutController extends Controller
         //return view('dash.products.addCheckoutForm',['checkout' => $checkout]);
     }
     
-    public function checkout(){
+    public function shipped(){
         $checkout = Checkout::join('order','checkout.orderId','=','order.id')
             ->join('users','order.userId', '=', 'users.id')
             ->join('delivery','checkout.deliveryId','=','delivery.id')
             ->get(['checkout.*', 'users.name', 'delivery.courier_name']);
 
-        return view('dash.products.showCheckout', compact('order'));    
+        return view('dash.products.showShipped', compact('checkout'));    
         //return view('dash.products.showCheckout',['checkout' => $checkout]);
+    }
+
+    public function payment(){
+        $checkout = Checkout::join('order','checkout.orderId','=','order.id')
+            ->join('users','order.userId', '=', 'users.id')
+            ->get(['checkout.orderId', 'checkout.costSum', 'checkout.phoneNumber', 'checkout.paymentMethod', 'users.name']);
+
+        return view('dash.products.showPayment', compact('checkout'));    
     }
 
     public function addCheckout()

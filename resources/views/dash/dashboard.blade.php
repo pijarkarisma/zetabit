@@ -91,6 +91,8 @@
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                           <li><a href="{{route('kategoriform')}}" class="link-light rounded">Category</a></li>
                           <li><a href="{{route('produkform')}}" class="link-light rounded">Product</a></li>
+                          <li><a href="{{route('deliveryform')}}" class="link-light rounded">Delivery</a></li>
+                          <li><a href="{{route('supplierform')}}" class="link-light rounded">Supplier</a></li>
                         </ul>
                       </div>
                     </li>
@@ -102,6 +104,10 @@
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                           <li><a href="{{route('showkategori')}}" class="link-light rounded">Category</a></li>
                           <li><a href="{{route('showproduk')}}" class="link-light rounded">Product</a></li>
+                          <li><a href="{{route('showdelivery')}}" class="link-light rounded">Delivery</a></li>
+                          <li><a href="{{route('showsupplier')}}" class="link-light rounded">Supplier</a></li>
+                          <li><a href="{{route('showwishlist')}}" class="link-light rounded">Wishlist</a></li>
+                          <li><a href="{{route('showorderdetail')}}" class="link-light rounded">User's Order Detail</a></li>
                         </ul>
                       </div>
                     </li>
@@ -111,18 +117,24 @@
                       </button>
                       <div class="collapse" id="orders-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="#" class="link-light rounded">New</a></li>
-                          <li><a href="#" class="link-light rounded">Processed</a></li>
-                          <li><a href="#" class="link-light rounded">Shipped</a></li>
+                          <li><a href="{{route('showorder')}}" class="link-light rounded">New</a></li>
+                          <li><a href="{{route('showpayment')}}" class="link-light rounded">Processed</a></li>
+                          <li><a href="{{route('showshipped')}}" class="link-light rounded">Shipped</a></li>
                           <li><a href="#" class="link-light rounded">Returned</a></li>
                         </ul>
                       </div>
                     </li>
                     <li class="border-top my-3"></li>
                     <li class="mb-1">
-                      <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                        SHOW ALL PRODUCTS
+                      <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#stockings-collapse" aria-expanded="false">
+                        STOCKINGS
                       </button>
+                      <div class="collapse" id="stockings-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li><a href="{{route('stockingform')}}" class="link-light rounded">Add Stock</a></li>
+                          <li><a href="{{route('showstocking')}}" class="link-light rounded">Show Stocking History</a></li>
+                        </ul>
+                      </div>
                     </li>
                   </ul>
                 </div>

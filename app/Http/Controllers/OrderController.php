@@ -10,14 +10,14 @@ use App\Models\User;
 class OrderController extends Controller
 {
     public function form(){
-        $user = User::all(); /*select * from order*/
+        $user = User::all(); /*select * from user*/
         //return view('dash.products.addOrderForm',['order' => $order]);
         return view('dash.products.addOrderForm', compact('user'));
     }
 
     public function order(){
         $order = Order::join('users','order.userId','=','users.id')
-            ->get(['order.*', 'kategori.kategoriName']);
+            ->get(['order.*', 'users.name']);
 
         //return view('dash.products.showOrderForm',['order' => $order]);
         return view('dash.products.showOrder', compact('order'));

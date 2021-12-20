@@ -1,7 +1,7 @@
 @extends('dash.dashboard')
 
 @section('konten-produk-admin')
-    <div><h2>All Supplier</h2></div>
+    <div><h2>All Suppliers</h2></div>
 
     <div class="table-responsive">
         <table class="table table-bordered" width="100%" cellspacing="0">
@@ -13,7 +13,7 @@
                 <th scope="col">Address</th>
                 <?php $no = 0 ?>
             </thead>
-            <tbody>
+            <tbody align="center">
             @foreach($supplier as $suppliers)
                 <tr>
                     <td align="center">{{++$no}}</td>
