@@ -25,22 +25,43 @@ class ProdukController extends Controller
 
     public function addProduk()
     {
-        $produk = new Produk();
+        $filename="";
+        if(\request()->hasFile('image')){
+            $img = \request()->file('image');
+            $filename= time().'.'.$img->getClientOriginalExtention();
+            \request()->file('image')->move(public_path('images', $filename));
+            $produk = new Produk([
+                "id" => \request()->input('id'),
+                "kategoriId" => \request()->input('kategoriId'),
+                "produkName" => \request()->input('produkName'),
+                "brand" => \request()->input('brand'),
+                "model" => \request()->input('model'),
+                "deskripsi" => \request()->input('deskripsi'),
+                "image" => $filename,
+                "garansi" => \request()->input('garansi'),
+                "harga" => \request()->input('harga'),
+                "stock" => \request()->input('stock'),
+                "terjual" => \request()->input('terjual')
+            ]);    
+            $produk->save();//Insert into table produk(id, kategoriId, brand, model, deskripsi, garansi, harga, stok, terjual, garansi, created_at,updated_at) value(?,?,?,?,?,?,?,?,?);
+            return redirect()->route('produkform')->with('success','Produk added successfully');
+        }
+        else{
+            return redirect()->route('produkform')->with('error','Failed to add product');
+        }
 
-        //model->columnName = request('field_name');
-        $produk->id = \request('id');
-        $produk->kategoriId = \request('kategoriId');
-        $produk->produkName = \request('produkName');
-        $produk->brand = \request('brand');
-        $produk->model = \request('model');
-        $produk->deskripsi = \request('deskripsi');
-        $produk->image = \request('image');
-        $produk->garansi = \request('garansi');
-        $produk->harga = \request('harga');
-        $produk->stock = \request('stock');
-        $produk->terjual = \request('terjual');
-
-        $produk->save();//Insert into table produk(id, kategoriId, brand, model, deskripsi, garansi, harga, stok, terjual, garansi, created_at,updated_at) value(?,?,?,?,?,?,?,?,?);
-        return redirect()->route('produkform')->with('success','Produk added successfully');
+        // $produk = new Produk();
+        // //model->columnName = request('field_name');
+        // $produk->id = \request('id');
+        // $produk->kategoriId = \request('kategoriId');
+        // $produk->produkName = \request('produkName');
+        // $produk->brand = \request('brand');
+        // $produk->model = \request('model');
+        // $produk->deskripsi = \request('deskripsi');
+        // // $produk->image = \request('image');
+        // $produk->garansi = \request('garansi');
+        // $produk->harga = \request('harga');
+        // $produk->stock = \request('stock');
+        // $produk->terjual = \request('terjual');
     }
 }
