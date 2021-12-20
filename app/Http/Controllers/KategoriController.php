@@ -10,12 +10,14 @@ class KategoriController extends Controller
 {
     public function form(){
         $kategori = Kategori::all(); /*select * from kategori*/
-        return view('dash.products.addKategoriForm',['kategori' => $kategori]);
+        return view('dash.products.addKategoriForm',compact('kategori'));
+        //return view('dash.products.addKategoriForm',['kategori' => $kategori]);
     }
 
     public function kategori(){
         $kategori = Kategori::all(); /*select * from kategori*/
-        return view('dash.products.showKategoriForm',['kategori' => $kategori]);
+        return view('dash.products.showKategoriForm',compact('kategori'));
+        //return view('dash.products.showKategoriForm',['kategori' => $kategori]);
     }
 
     public function addKategori()

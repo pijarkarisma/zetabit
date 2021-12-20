@@ -59,6 +59,11 @@ Route::get('/shopping-cart', function(){
     return view('cart');
 })->name('cart');
 
+//Produk
+Route::get('produk', [ProdukController::class, 'produk'])->name('showproduk');
+Route::get('produkform', [ProdukController::class, 'form'])->name('produkform');
+Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
+
 //Kategori
 Route::get('kategori', [KategoriController::class, 'kategori'])->name('showkategori');
 Route::get('kategoriform', [KategoriController::class, 'form'])->name('kategoriform');
@@ -69,15 +74,10 @@ Route::get('delivery', [DeliveryController::class, 'delivery'])->name('showdeliv
 Route::get('deliveryform', [DeliveryController::class, 'form'])->name('deliveryform');
 Route::post('adddelivery', [DeliveryController::class, 'addDelivery'])->name('addpdelivery');
 
-//Kategori
-Route::get('kategori', [KategoriController::class, 'kategori'])->name('showkategori');
-Route::get('kategoriform', [KategoriController::class, 'form'])->name('kategoriform');
-Route::post('addkategori', [KategoriController::class, 'addKategori'])->name('addkategori');
-
 //Supplier
-Route::get('supplier', [ProdukController::class, 'supplier'])->name('showsupplier');
-Route::get('supplierform', [ProdukController::class, 'form'])->name('supplierform');
-Route::post('addsupplier', [ProdukController::class, 'addSupplier'])->name('addsupplier');
+Route::get('supplier', [SupplierController::class, 'supplier'])->name('showsupplier');
+Route::get('supplierform', [SupplierController::class, 'form'])->name('supplierform');
+Route::post('addsupplier', [SupplierController::class, 'addSupplier'])->name('addsupplier');
 
 // //Processor
 // Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
