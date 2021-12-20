@@ -4,9 +4,11 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DeliveryController;
 use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\BatteryController;
-use App\Http\Controllers\VGAController;
-use App\Http\Controllers\LaptopController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\StockingController;
+use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -83,6 +85,16 @@ Route::post('adddelivery', [DeliveryController::class, 'addDelivery'])->name('ad
 Route::get('supplier', [SupplierController::class, 'supplier'])->name('showsupplier');
 Route::get('supplierform', [SupplierController::class, 'form'])->name('supplierform');
 Route::post('addsupplier', [SupplierController::class, 'addSupplier'])->name('addsupplier');
+
+//Checkout
+Route::get('checkout', [CheckoutController::class, 'checkout'])->name('showcheckout');
+Route::get('checkoutform', [CheckoutController::class, 'form'])->name('checkoutform');
+Route::post('addcheckout', [CheckoutController::class, 'addCheckout'])->name('addcheckout');
+
+//Stocking
+Route::get('stocking', [StockingController::class, 'stocking'])->name('showstocking');
+Route::get('stockingform', [StockingController::class, 'form'])->name('stockingform');
+Route::post('addstocking', [StockingController::class, 'addStocking'])->name('addstocking');
 
 // //Processor
 // Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
