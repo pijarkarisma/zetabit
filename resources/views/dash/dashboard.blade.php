@@ -153,7 +153,8 @@
                   
                           <div class="dropdown text-end">
                             @auth
-                            @if ($user->avatar != 'default-avatar.jpg')
+                            {{-- $user = {{Auth::user()}}; --}}
+                            @if ('{{Auth::user()->avatar}}' != 'default-avatar.jpg')
                             <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                               <img src="/frontend/image/upload/avatar/{{Auth::user()->avatar}}" alt="mdo" width="32" height="32" class="rounded-circle">
                             </a>
