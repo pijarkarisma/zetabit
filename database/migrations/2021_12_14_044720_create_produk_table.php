@@ -16,10 +16,12 @@ class CreateProdukTable extends Migration
         Schema::create('produk', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('kategoriId');
+            $table->string('produkName');
             $table->string('brand');
             $table->string('model');
             $table->string('deskripsi');
             $table->string('garansi');
+            $table->string('image');
             $table->double('harga');
             $table->integer('stock');
             $table->integer('terjual');

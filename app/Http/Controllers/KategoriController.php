@@ -8,9 +8,14 @@ use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
+    public function form(){
+        $kategori = Kategori::all(); /*select * from kategori*/
+        return view('dash.products.addKategoriForm',['kategori' => $kategori]);
+    }
+
     public function kategori(){
         $kategori = Kategori::all(); /*select * from kategori*/
-        return view('kategori',['kategori' => $kategori]);
+        return view('dash.products.showKategoriForm',['kategori' => $kategori]);
     }
 
     public function addKategori()
@@ -19,7 +24,7 @@ class KategoriController extends Controller
 
         //model->columnName = request('field_name');
         $kategori->id = \request('id');
-        $kategori->name = \request('name');
+        $kategori->kategoriName = \request('kategoriName');
 
         $kategori->save();//Insert into table kategori(id, nama) value(?,?);
         return redirect()->route('kategoriform')->with('success','Kategori added successfully');

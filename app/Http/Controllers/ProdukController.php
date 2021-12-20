@@ -5,12 +5,22 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Produk;
+use App\Models\Kategori;
 
 class ProdukController extends Controller
 {
+    public function form(){
+        $kategori = Kategori::all();
+        return view('dash.products.addProdukForm', compact('kategori'));
+    }
+
     public function produk(){
-        $produk = Produk::all(); /*select * from produk*/
-        return view('product',['product' => $produk]);
+        //$produk = Produk::all(); /*select * from produk*/
+        
+        $produk = Produk::join('kategori','produk.kategoriId','=','kategori.id')
+            ->get(['produk.*', 'kategori.kategoriName']);
+
+        return view('dash.products.showProduk', compact('produk'));
     }
 
     public function addProduk()
@@ -20,9 +30,11 @@ class ProdukController extends Controller
         //model->columnName = request('field_name');
         $produk->id = \request('id');
         $produk->kategoriId = \request('kategoriId');
+        $produk->produkName = \request('produkName');
         $produk->brand = \request('brand');
         $produk->model = \request('model');
         $produk->deskripsi = \request('deskripsi');
+        $produk->image = \request('image');
         $produk->garansi = \request('garansi');
         $produk->harga = \request('harga');
         $produk->stock = \request('stock');

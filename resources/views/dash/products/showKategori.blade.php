@@ -5,15 +5,16 @@
     <table class="table">
         <thead align="center">
             <tr>
-                <th scope="row">ID</th>
+                <th scope="col">No</th>
                 <th scope="col">Name</th>
+                <?php $no = 0 ?>
             </tr>
         </thead>
         <tbody>
             @foreach($kategori as $categories)
             <tr>
-                <th scope="row">{{$categories->id}}</th>
-                <td align="center">{{$categories->name}}</td>
+                <th align="center">{{++$no}}</th>
+                <td align="center">{{$categories->kategoriName}}</td>
             </tr>
             @endforeach
         </tbody>
