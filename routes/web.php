@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProdukController;
-use App\Http\Controllers\OSController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\HeatsinkController;
 use App\Http\Controllers\ProcessorController;
 use App\Http\Controllers\BatteryController;
