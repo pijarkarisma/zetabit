@@ -89,10 +89,10 @@
                       </button>
                       <div class="collapse" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="{{route('kategoriform')}}" class="link-light rounded">Category</a></li>
+                          <!-- <li><a href="{{route('kategoriform')}}" class="link-light rounded">Category</a></li> -->
                           <li><a href="{{route('produkform')}}" class="link-light rounded">Product</a></li>
-                          <li><a href="{{route('deliveryform')}}" class="link-light rounded">Delivery</a></li>
-                          <li><a href="{{route('supplierform')}}" class="link-light rounded">Supplier</a></li>
+                          <!-- <li><a href="{{route('deliveryform')}}" class="link-light rounded">Delivery</a></li>
+                          <li><a href="{{route('supplierform')}}" class="link-light rounded">Supplier</a></li> -->
                         </ul>
                       </div>
                     </li>
@@ -113,7 +113,7 @@
                     </li>
                     <li class="mb-1">
                       <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-                        Orders
+                        ORDERS
                       </button>
                       <div class="collapse" id="orders-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">

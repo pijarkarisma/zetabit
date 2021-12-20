@@ -13,6 +13,7 @@
                 <th scope="col">Employee</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Price</th>
+                <th colspan=2>Action</th>
                 <?php $no = 0 ?>
             </tr>
         </thead>
@@ -26,6 +27,8 @@
                 <td align="center">{{$stockings->name}}</td>
                 <td align="center">{{$stockings->quantity}}</td>
                 <td align="center">{{$stockings->price}}</td>
+                <td align="center"><a href="#"><button type="button" class="btn btn-success">Edit</button></a></td>
+                <td align="center"><a href="#"><button type="button" class="btn btn-danger">Delete</button></a></td>
             </tr>
             @endforeach
         </tbody>
