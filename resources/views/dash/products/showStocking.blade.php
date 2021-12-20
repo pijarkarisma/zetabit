@@ -28,7 +28,13 @@
                 <td align="center">{{$stockings->quantity}}</td>
                 <td align="center">{{$stockings->price}}</td>
                 <td align="center"><a href="#"><button type="button" class="btn btn-success">Edit</button></a></td>
-                <td align="center"><a href="#"><button type="button" class="btn btn-danger">Delete</button></a></td>
+                <td align="center">
+                    <form action="{{ url('destroystock/'.$stockings->id) }}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
         </tbody>

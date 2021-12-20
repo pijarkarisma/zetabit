@@ -46,4 +46,11 @@ class StockingController extends Controller
         $stocking->save();//Insert into table stocking(id, stockDate, productId, supplierId, userId, quantity, price) value(?,?,?,?,?,?,?);
         return redirect()->route('stockingform')->with('success','Stocking added successfully');
     }
+
+    public function destroy($id)
+    {
+        $stocking = Stocking::find($id);
+        $stocking->delete();
+        return redirect()->back()->with('status','Student Deleted Successfully');
+    }
 }

@@ -68,4 +68,11 @@ class ProdukController extends Controller
         $produk->save();//Insert into table produk(id, kategoriId, brand, model, deskripsi, garansi, harga, stok, terjual, garansi, created_at,updated_at) value(?,?,?,?,?,?,?,?,?);
         return redirect()->route('produkform')->with('success','Produk added successfully');
     }
+
+    public function destroy($id)
+    {
+        $produk = Produk::find($id);
+        $produk->delete();
+        return redirect()->back()->with('status','Produk Deleted Successfully');
+    }
 }
