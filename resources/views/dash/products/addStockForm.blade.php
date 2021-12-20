@@ -1,7 +1,7 @@
 @extends('dash.dashboard')
 
 @section('konten-produk-admin')
-    <div><h2>Add Produk</h2></div>
+    <div><h2>Add Stock</h2></div>
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
@@ -19,10 +19,6 @@
     <form action="{{route('addstocking')}}" method="POST">
         @csrf
         <div class="form-row pt-4">
-            <!-- <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Date</label>
-                <input type="text" class="form-control" name="stockDate">
-            </div> -->
             <div class="form-group col-md-6">
                 <label>Product</label>
                 <select name="productId" class="form-control">

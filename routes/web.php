@@ -96,6 +96,16 @@ Route::get('stocking', [StockingController::class, 'stocking'])->name('showstock
 Route::get('stockingform', [StockingController::class, 'form'])->name('stockingform');
 Route::post('addstocking', [StockingController::class, 'addStocking'])->name('addstocking');
 
+//Order
+Route::get('order', [OrderController::class, 'order'])->name('showorder');
+Route::get('orderform', [OrderController::class, 'form'])->name('orderform');
+Route::post('addorder', [OrderController::class, 'addOrder'])->name('addorder');
+
+//Wishlist
+Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('showwishlist');
+Route::get('wishlistform', [WishlistController::class, 'form'])->name('wishlistform');
+Route::post('addwishlist', [WishlistController::class, 'addWishlist'])->name('addwishlist');
+
 // //Processor
 // Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
 // Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name('addprocessor');

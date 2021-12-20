@@ -8,7 +8,7 @@
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Order Date</th>
-                <th scope="col">Employee</th>
+                <th scope="col">Customer</th>
                 <?php $no = 0 ?>
             </tr>
         </thead>
