@@ -102,6 +102,11 @@ Route::get('order', [OrderController::class, 'order'])->name('showorder');
 Route::get('orderform', [OrderController::class, 'form'])->name('orderform');
 Route::post('addorder', [OrderController::class, 'addOrder'])->name('addorder');
 
+//Order_Details
+Route::get('order_details', [OrderDetailController::class, 'order_details'])->name('showorderdetail');
+Route::get('orderform', [OrderDetailController::class, 'form'])->name('orderorderdetail');
+Route::post('addorderdetail', [OrderDetailController::class, 'addOrderDetail'])->name('addorderdetail');
+
 //Wishlist
 Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('showwishlist');
 Route::get('wishlistform', [WishlistController::class, 'form'])->name('wishlistform');

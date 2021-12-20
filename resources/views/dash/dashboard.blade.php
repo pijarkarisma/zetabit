@@ -107,6 +107,7 @@
                           <li><a href="{{route('showdelivery')}}" class="link-light rounded">Delivery</a></li>
                           <li><a href="{{route('showsupplier')}}" class="link-light rounded">Supplier</a></li>
                           <li><a href="{{route('showwishlist')}}" class="link-light rounded">Wishlist</a></li>
+                          <li><a href="{{route('showorderdetail')}}" class="link-light rounded">User's Order Detail</a></li>
                         </ul>
                       </div>
                     </li>
