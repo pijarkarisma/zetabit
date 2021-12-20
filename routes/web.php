@@ -98,6 +98,7 @@ Route::get('produk', [ProdukController::class, 'produk'])->name('showproduk');
 Route::get('produkform', [ProdukController::class, 'form'])->name('produkform');
 Route::delete('destroyproduk/{id}', [ProdukController::class, 'destroy']);
 Route::get('editproduk/{id}', [ProdukController::class, 'edit']);
+Route::put('updateproduk/{id}', [StockingController::class, 'update']);
 Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
 
 //Kategori

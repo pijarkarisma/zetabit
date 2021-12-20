@@ -90,4 +90,41 @@ class ProdukController extends Controller
         $produk->delete();
         return redirect()->back()->with('status','Produk Deleted Successfully');
     }
+
+    public function edit($id)
+    {
+        $kategori = Kategori::all();
+        $produk = Produk::find($id);
+        return view('dash.products.editProdukForm', compact('produk','kategori'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $produk = Produk::find($id);
+        
+        if($request->hasFile('image')){
+            // Delete file if user change avatar
+            $image = $request->input('image');
+    		$filename = time() . '.' . $image->getClientOriginalExtension();
+    		Image::make($image)->resize(700, null, function($constraint) {$constraint->aspectRatio();})->save( public_path('/frontend/image/upload/produk/' . $filename ) );
+
+    		// $user = Auth::user();
+            // $produk = new Produk();
+    		$produk->image = $filename;
+    	}
+        
+        $produk->kategoriId = $request->input('kategoriId');
+        $produk->produkName = $request->input('produkName');
+        $produk->brand = $request->input('brand');
+        $produk->model = $request->input('model');
+        $produk->deskripsi = $request->input('deskripsi');
+        // $produk->image = $request->input('image');
+        $produk->garansi = $request->input('garansi');
+        $produk->harga = $request->input('harga');
+        $produk->stock = $request->input('stock');
+        $produk->terjual = $request->input('terjual');
+        
+        $produk->update();
+        return redirect()->back()->with('success','Produk updated Successfully');
+    }
 }

@@ -35,7 +35,11 @@
                     <td align="center">{{$produks->harga}}</td>
                     <td align="center">{{$produks->stock}}</td>
                     <td align="center">{{$produks->terjual}}</td>
-                    <td align="center"><a href="#"><button type="button" class="btn btn-success">Edit</button></a></td>
+                    <td align="center">
+                        <a href="{{ url('editproduk/'.$produks->id) }}">
+                            <button type="button" class="btn btn-success">Edit</button>
+                        </a>
+                    </td>
                     <td align="center">
                         <form action="{{ url('destroyproduk/'.$produks->id) }}" method="post" onsubmit="return confirm('Are you sure?')">
                             @method('delete')
