@@ -87,7 +87,8 @@ Route::get('supplierform', [SupplierController::class, 'form'])->name('supplierf
 Route::post('addsupplier', [SupplierController::class, 'addSupplier'])->name('addsupplier');
 
 //Checkout
-Route::get('checkout', [CheckoutController::class, 'checkout'])->name('showcheckout');
+Route::get('payment', [CheckoutController::class, 'payment'])->name('showpayment');
+Route::get('shipped', [CheckoutController::class, 'shipped'])->name('showshipped');
 Route::get('checkoutform', [CheckoutController::class, 'form'])->name('checkoutform');
 Route::post('addcheckout', [CheckoutController::class, 'addCheckout'])->name('addcheckout');
 

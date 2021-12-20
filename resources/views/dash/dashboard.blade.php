@@ -117,8 +117,8 @@
                       <div class="collapse" id="orders-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                           <li><a href="{{route('showorder')}}" class="link-light rounded">New</a></li>
-                          <li><a href="#" class="link-light rounded">Processed</a></li>
-                          <li><a href="#" class="link-light rounded">Shipped</a></li>
+                          <li><a href="{{route('showpayment')}}" class="link-light rounded">Processed</a></li>
+                          <li><a href="{{route('showshipped')}}" class="link-light rounded">Shipped</a></li>
                           <li><a href="#" class="link-light rounded">Returned</a></li>
                         </ul>
                       </div>
