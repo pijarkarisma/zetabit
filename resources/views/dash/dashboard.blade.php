@@ -93,6 +93,7 @@
                           <li><a href="{{route('produkform')}}" class="link-light rounded">Product</a></li>
                           <li><a href="{{route('deliveryform')}}" class="link-light rounded">Delivery</a></li>
                           <li><a href="{{route('supplierform')}}" class="link-light rounded">Supplier</a></li>
+                          <li><a href="{{route('stockingform')}}" class="link-light rounded">Add Stock</a></li>
                         </ul>
                       </div>
                     </li>
@@ -106,6 +107,7 @@
                           <li><a href="{{route('showproduk')}}" class="link-light rounded">Product</a></li>
                           <li><a href="{{route('showdelivery')}}" class="link-light rounded">Delivery</a></li>
                           <li><a href="{{route('showsupplier')}}" class="link-light rounded">Supplier</a></li>
+                          <li><a href="{{route('showstocking')}}" class="link-light rounded">Show Stocking History</a></li>
                         </ul>
                       </div>
                     </li>
@@ -125,8 +127,14 @@
                     <li class="border-top my-3"></li>
                     <li class="mb-1">
                       <button class="btn btn-toggle text-white align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-                        SHOW ALL PRODUCTS
+                        STOCKINGS
                       </button>
+                      <div class="collapse" id="stockings-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                          <li><a href="{{route('stockingform')}}" class="link-light rounded">Add Stock</a></li>
+                          <li><a href="{{route('showstocking')}}" class="link-light rounded">Show Stocking History</a></li>
+                        </ul>
+                      </div>
                     </li>
                   </ul>
                 </div>

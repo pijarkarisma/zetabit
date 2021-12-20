@@ -22,7 +22,7 @@
                 <td align="center">{{++$no}}</td>
                 <td align="center">{{$stockings->stockDate}}</td>
                 <td align="center">{{$stockings->produkName}}</td>
-                <td align="center">{{$stockings->name}}</td>
+                <td align="center">{{$stockings->company}}</td>
                 <td align="center">{{$stockings->name}}</td>
                 <td align="center">{{$stockings->quantity}}</td>
                 <td align="center">{{$stockings->price}}</td>

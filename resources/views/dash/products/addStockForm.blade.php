@@ -19,10 +19,10 @@
     <form action="{{route('addstocking')}}" method="POST">
         @csrf
         <div class="form-row pt-4">
-            <div class="form-group col-md-6 pt-3">
+            <!-- <div class="form-group col-md-6 pt-3">
                 <label for="inputEmail4">Date</label>
                 <input type="text" class="form-control" name="stockDate">
-            </div>
+            </div> -->
             <div class="form-group col-md-6">
                 <label>Product</label>
                 <select name="productId" class="form-control">
@@ -32,43 +32,30 @@
                 </select>
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Name</label>
-                <input type="text" class="form-control" name="produkName">
+                <label for="inputEmail4">Supplier</label>
+                <select name="supplierId" class="form-control">
+                    @foreach($supplier as $suppliers)
+                        <option value="{{$suppliers->id}}">{{$suppliers->company}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Brand</label>
-                <input type="text" class="form-control" name="brand">
+                <label for="inputEmail4">Employee</label>
+                <select name="userId" class="form-control">
+                    @foreach($user as $users)
+                        <option value="{{$users->id}}">{{$users->name}}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Model</label>
-                <input type="text" class="form-control" name="model">
+                <label for="inputEmail4">Quantity</label>
+                <input type="text" class="form-control" name="quantity">
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Description</label>
-                <input type="text" class="form-control" name="deskripsi">
-            </div>
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Garansi</label>
-                <input type="text" class="form-control" name="garansi">
-            </div>
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Image</label>
-                <input type="text" class="form-control" name="image">
-            </div>
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Harga</label>
-                <input type="number" class="form-control" name="harga">
-            </div>
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Stock</label>
-                <input type="number" class="form-control" name="stock">
-            </div>
-            <div class="form-group col-md-6 pt-3">
-                <label for="inputPassword4">Terjual</label>
-                <input type="number" class="form-control" name="terjual">
+                <label for="inputEmail4">Price</label>
+                <input type="text" class="form-control" name="price">
             </div>
         </div>
-
         <button type="submit" class="btn btn-primary mt-4">Add</button>
     </form>
 @endsection
