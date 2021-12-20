@@ -30,7 +30,7 @@
                     <td align="center">{{$produks->model}}</td>
                     <td align="center">{{$produks->deskripsi}}</td>
                     <td align="center">{{$produks->garansi}}</td>
-                    <td align="center"><img src = "{{$produks->image}}"></img></td>
+                    <td align="center"><img src = "/frontend/image/upload/produk/{{$produks->image}}" width="120px"></img></td>
                     <td align="center">{{$produks->harga}}</td>
                     <td align="center">{{$produks->stock}}</td>
                     <td align="center">{{$produks->terjual}}</td>

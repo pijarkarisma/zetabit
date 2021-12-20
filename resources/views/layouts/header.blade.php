@@ -139,7 +139,7 @@
                   KOMPONEN PC
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"> Processor</a></li>
+                  <li><a class="dropdown-item" href="{{route('processor-catalog')}}"> Processor</a></li>
                   <li><a class="dropdown-item" href="#"> Motherboard</a></li>
                   <li><a class="dropdown-item" href="#"> Memory</a></li>
                   <li><a class="dropdown-item" href="#"> Graphic Card</a></li>

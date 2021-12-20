@@ -83,6 +83,9 @@ Route::get('/dash',function(){
     return view('dash/dashboard');
 });
 
+// Halaman Katalog Processor
+Route::get('processor-catalog', [ProdukController::class, 'processorCatalog'])->name('processor-catalog');
+
 //Produk
 Route::get('produk', [ProdukController::class, 'produk'])->name('showproduk');
 Route::get('produkform', [ProdukController::class, 'form'])->name('produkform');
