@@ -83,6 +83,9 @@ Route::get('/dash',function(){
     return view('dash/dashboard');
 });
 
+//Search product
+Route::get('/search', [ProdukController::class, 'search'])->name('search');
+
 //Halaman detail produk
 // Route::get('product-detail', [ProdukController::class, 'productDetail'])->name('product-detail');
 Route::get('/product-detail/{id}',[ProdukController::class, 'productDetail'])->name('product-detail');

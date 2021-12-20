@@ -11,6 +11,21 @@ use Image;
 
 class ProdukController extends Controller
 {
+    public function search(Request $request)
+    {
+        // Get the search value from the request
+        $search = $request->input('search');
+
+        // Search in the title and body columns from the posts table
+        $produk = Produk::query()
+            ->where('produkName', 'LIKE', "%{$search}%")
+            ->orWhere('deskripsi', 'LIKE', "%{$search}%")
+            ->get();
+
+        // Return the search view with the resluts compacted
+        return view('productPage.search', compact('produk'));
+    }
+
     public function form(){
         $kategori = Kategori::all();
         return view('dash.products.addProdukForm', compact('kategori'));
