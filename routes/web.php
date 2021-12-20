@@ -81,7 +81,7 @@ Route::post('addkategori', [KategoriController::class, 'addKategori'])->name('ad
 //Delivery
 Route::get('delivery', [DeliveryController::class, 'delivery'])->name('showdelivery');
 Route::get('deliveryform', [DeliveryController::class, 'form'])->name('deliveryform');
-Route::post('adddelivery', [DeliveryController::class, 'addDelivery'])->name('addpdelivery');
+Route::post('adddelivery', [DeliveryController::class, 'addDelivery'])->name('adddelivery');
 
 //Supplier
 Route::get('supplier', [SupplierController::class, 'supplier'])->name('showsupplier');
