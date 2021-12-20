@@ -48,8 +48,8 @@
                 <input type="text" class="form-control" name="garansi">
             </div>
             <div class="form-group col-md-6 pt-3">
-                <label for="inputEmail4">Image</label>
-                <input type="text" class="form-control" name="image">
+                <label for="inputEmail4">Image</label><br>
+                <input type="file" name="image" id="image">
             </div>
             <div class="form-group col-md-6 pt-3">
                 <label for="inputPassword4">Harga</label>
