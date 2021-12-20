@@ -35,7 +35,10 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {
-            //
+            logger($e);
+            if($e->getStatusCode() == 500 ){
+                return redirect('/');
+            }
         });
     }
 }

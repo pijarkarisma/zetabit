@@ -8,6 +8,7 @@ use App\Http\Controllers\BatteryController;
 use App\Http\Controllers\VGAController;
 use App\Http\Controllers\LaptopController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CheckAvatarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,8 +43,15 @@ Route::get('/admin',function(){
 })->middleware('prevent-back-history')->name('admin');
 
 //Halaman Profile
-Route::get('/profile', [UserController::class, 'profile'])->name('profile');
-Route::post('/profile', [UserController::class, 'update_profile'])->name('updateprofile');
+Route::get('/profile', [UserController::class, 'profile'])
+->middleware(['auth','verified','prevent-back-history'])->name('profile');
+
+Route::post('/profile', [UserController::class, 'update_profile'])
+->middleware(['auth','verified','prevent-back-history'])->name('updateprofile');
+
+Route::post('/profile/delete-avatar', [UserController::class, 'delete_avatar'])
+->middleware(['auth','verified','prevent-back-history'])->name('deleteavatar');
+
 
 //Halaman Komponen PC
 Route::get('/komponen-pc', function () {

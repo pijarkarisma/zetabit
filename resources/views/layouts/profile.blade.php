@@ -16,6 +16,7 @@
         <style>
             body{
                 background-image: linear-gradient(rgb(228, 228, 228), whitesmoke);
+                height: 100%;
             }
 
             .breadcrumb-item{
@@ -48,14 +49,23 @@
                 </div>
                 <div class="my-auto pe-4">
                     @auth
-                    @if ($user->avatar == 'default-avatar.jpg')
-                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="white" class="bi bi-person" viewBox="0 0 16 16">
-                        <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                    </svg>
-                    @else
-                    <img src="/frontend/image/upload/avatar/{{Auth::user()->avatar}}" style="width:45px; height:45px; border-radius:50%;">    
-                    @endif
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/frontend/image/upload/avatar/{{Auth::user()->avatar}}" style="width:45px; height:45px; border-radius:50%;">    
+                    </a>
                     @endauth
+
+                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="{{route('landing')}}">Home</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><form method="POST" action="{{ route('logout') }}">
+                          @csrf
+                          <a class="dropdown-item" href="{{route('logout')}}"
+                                  onclick="event.preventDefault();
+                                              this.closest('form').submit();">
+                              {{ __('Log out') }}
+                        </a></li>
+                      </form>
+                      </ul>
                 </div>
             </div>
         {{-- End of Navbar --}}
@@ -64,7 +74,7 @@
         <div class="container-fluid">
             <div class="row py-4">
                 {{-- Breadcrumb --}}
-                <nav style="--bs-breadcrumb-divider: '>'; padding-left: 2rem;" aria-label="breadcrumb">
+                <nav class="ps-4" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a id="breadcrumb-inactive" style="text-decoration: none" href="{{route('landing')}}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Profile</li>
@@ -83,24 +93,35 @@
                                 @csrf
                                 <div class="pb-4">
                                     <div class="pb-2">
-                                        @auth
+                                        {{-- @auth
                                         @if ($user->avatar != 'default-avatar.jpg')
                                         <div>
-                                            <img src="/frontend/image/upload/avatar/{{Auth::user()->avatar}}" style="width:120px; height:120px; border-radius:50%;">    
+                                            <img src="/frontend/image/upload/avatar/{{Auth::user()->avatar}}" style="width:100px; height:100px; border-radius:50%;">    
                                         </div>
                                         @else
                                         <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" fill="white" class="bi bi-person" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="white" class="bi bi-person" viewBox="0 0 16 16">
                                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                                             </svg>
                                         </div>
                                         @endif
-                                        @endauth
+                                        @endauth --}}
+                                        <div>
+                                            <img src="/frontend/image/upload/avatar/{{Auth::user()->avatar}}" style="width:100px; height:100px; border-radius:50%;">    
+                                        </div>
                                     </div>
                                     <div>
                                         <label for="avatar" class="form-label">Ubah foto profil</label>
-                                        <div class="col-md-8">
-                                            <input class="form-control" type="file" name="avatar">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <input class="form-control" type="file" name="avatar">
+                                            </div>
+                                            {{-- <form action="{{route('deleteavatar')}}" method="POST">
+                                                @csrf
+                                                <div class="col-md-4">
+                                                    <button type="submit" class="btn btn-outline-danger" name="deleteavatar">Hapus foto profil</button>
+                                                </div>
+                                            </form> --}}
                                         </div>
                                     </div>
 
@@ -108,26 +129,44 @@
                                     <div class="pb-4">
                                         @auth
                                         <label for="name" class="form-label">Nama</label>
-                                        <div class="col-md-8">
+                                        <div class="col-md-8 pe-2">
                                             <input class="form-control" type="text" value="{{ Auth::user()->name }}" name="name">
                                         </div>
                                         @endauth
                                     </div>
         
-                                    <div class="pb-5">
+                                    <div class="pb-4">
                                         @auth
                                         <label for="address" class="form-label">Alamat</label>
-                                        <div class="col-md-8">
+                                        <div class="col-md-8 pe-2">
                                             <input class="form-control" type="text" value="{{ Auth::user()->address }}" name="address">
                                         </div>
                                         @endauth
                                     </div>
-        
-                                    <div class="float-end">
-                                        <button type="submit" class="btn btn-dark px-4">SAVE</button>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="d-grid">
+                                                <button type="submit" class="btn btn-dark px-4">SAVE</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </form> 
+                            <form action="{{route('deleteavatar')}}" method="POST">
+                                @csrf
+                                @auth
+                                @if ($user->avatar == 'default-avatar.jpg')
+                                <div class="col-md-8 ps-4 pe-3 pb-4 d-grid">
+                                    <button type="submit" class="btn btn-outline-danger disabled" name="deleteavatar">Hapus foto profil</button>
+                                </div>
+                                @else
+                                <div class="col-md-8 ps-4 pe-3 pb-4 d-grid">
+                                    <button type="submit" class="btn btn-outline-danger" name="deleteavatar">Hapus foto profil</button>
+                                </div>
+                                @endif
+                                @endauth
+                            </form>
                         </div>
                     </div>
                 </div>
