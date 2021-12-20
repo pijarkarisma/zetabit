@@ -17,6 +17,10 @@
             body{
                 background-image: linear-gradient(rgb(228, 228, 228), whitesmoke);
             }
+
+            .breadcrumb-item{
+                text-decoration: none;
+            }
         </style>
         
         <!-- Custom styles for this template -->
@@ -59,6 +63,14 @@
         {{-- Start of content --}}
         <div class="container-fluid">
             <div class="row py-4">
+                {{-- Breadcrumb --}}
+                <nav style="--bs-breadcrumb-divider: '>'; padding-left: 2rem;" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a id="breadcrumb-inactive" style="text-decoration: none" href="{{route('landing')}}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
+                    </ol>
+                </nav>
+
                 <div class="col-4 ps-4">
                     <h3>Informasi Profil</h3>
                     <p>Anda dapat mengubah foto profil dan nama</p>
