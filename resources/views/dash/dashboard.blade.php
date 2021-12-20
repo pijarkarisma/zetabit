@@ -100,8 +100,8 @@
                       </button>
                       <div class="collapse" id="dashboard-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                          <li><a href="{{route('kategori')}}" class="link-light rounded">Category</a></li>
-                          <li><a href="{{route('produk')}}" class="link-light rounded">Product</a></li>
+                          <li><a href="{{route('showkategori')}}" class="link-light rounded">Category</a></li>
+                          <li><a href="{{route('showproduk')}}" class="link-light rounded">Product</a></li>
                         </ul>
                       </div>
                     </li>
