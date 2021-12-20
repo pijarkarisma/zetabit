@@ -123,7 +123,9 @@
                               <img src="{{asset('frontend/image/product-img/komponen-pc/processor-thumbnail.png')}}" alt="Processor" style="max-width: 120px; max-height: 120px"></img>
                             </div>
                             <div class="col-7">
-                              <h5>CPU / Processor</h5>
+                              <a href="{{route('processor-catalog')}}" style="text-decoration: none; color: #5a5a5a;">
+                                <h5>CPU / Processor</h5>
+                              </a>
                               <ul style="list-style: none; padding-left:0">
                                 <li>Intel Processor</li>
                                 <li>AMD Processor</li>

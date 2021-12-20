@@ -45,7 +45,7 @@ class ProdukController extends Controller
             // Delete file if user change avatar
             $image = \request('image');
     		$filename = time() . '.' . $image->getClientOriginalExtension();
-    		Image::make($image)->resize(300, null, function($constraint) {$constraint->aspectRatio();})->save( public_path('/frontend/image/upload/produk/' . $filename ) );
+    		Image::make($image)->resize(700, null, function($constraint) {$constraint->aspectRatio();})->save( public_path('/frontend/image/upload/produk/' . $filename ) );
 
     		// $user = Auth::user();
             // $produk = new Produk();
