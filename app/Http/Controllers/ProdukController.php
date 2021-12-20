@@ -25,6 +25,13 @@ class ProdukController extends Controller
         return view('dash.products.showProduk', compact('produk'));
     }
 
+    public function processorCatalog(){
+        $produk = Produk::join('kategori','produk.kategoriId','=','kategori.id')
+            ->get(['produk.*', 'kategori.kategoriName']);
+
+        return view('productPage.processorCatalog', compact('produk'));
+    }
+
     public function addProduk(Request $request)
     {
         $produk = new Produk();
@@ -33,7 +40,7 @@ class ProdukController extends Controller
             // Delete file if user change avatar
             $image = \request('image');
     		$filename = time() . '.' . $image->getClientOriginalExtension();
-    		Image::make($image)->resize(300, null, function($constraint) {$constraint->aspectRatio();})->save( public_path('/frontend/image/upload/avatar/' . $filename ) );
+    		Image::make($image)->resize(300, null, function($constraint) {$constraint->aspectRatio();})->save( public_path('/frontend/image/upload/produk/' . $filename ) );
 
     		// $user = Auth::user();
             // $produk = new Produk();
