@@ -39,9 +39,6 @@ class ProdukController extends Controller
             // $produk = new Produk();
     		$produk->image = $filename;
     	}
-        else{
-            $produk->image = \request('image');
-        }
 
         //model->columnName = request('field_name');
         $produk->id = \request('id');

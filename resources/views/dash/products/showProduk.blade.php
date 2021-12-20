@@ -13,7 +13,7 @@
                     <th scope="col">Model</th>
                     <th scope="col">Description</th>
                     <th scope="col">Garansi</th>
-                    <!-- <th scope="col">Gambar</th> -->
+                    <th scope="col">Gambar</th>
                     <th scope="col">Price</th>
                     <th scope="col">Stock</th>
                     <th scope="col">Sold</th>
@@ -30,9 +30,7 @@
                     <td align="center">{{$produks->model}}</td>
                     <td align="center">{{$produks->deskripsi}}</td>
                     <td align="center">{{$produks->garansi}}</td>
-                    <!-- <td align="center">
-                        <img src = {{$produks->gambar}}></img>
-                    </td> -->
+                    <td align="center"><img src = "{{$produks->image}}"></img></td>
                     <td align="center">{{$produks->harga}}</td>
                     <td align="center">{{$produks->stock}}</td>
                     <td align="center">{{$produks->terjual}}</td>

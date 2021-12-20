@@ -74,6 +74,15 @@ Route::get('/shopping-cart', function(){
     return view('cart');
 })->name('cart');
 
+
+Route::get('/admin/produk',function(){
+    return view('produk');
+})->name('produk');
+
+Route::get('/dash',function(){
+    return view('dash/dashboard');
+});
+
 //Produk
 Route::get('produk', [ProdukController::class, 'produk'])->name('showproduk');
 Route::get('produkform', [ProdukController::class, 'form'])->name('produkform');
@@ -119,38 +128,5 @@ Route::post('addorderdetail', [OrderDetailController::class, 'addOrderDetail'])-
 Route::get('wishlist', [WishlistController::class, 'wishlist'])->name('showwishlist');
 Route::get('wishlistform', [WishlistController::class, 'form'])->name('wishlistform');
 Route::post('addwishlist', [WishlistController::class, 'addWishlist'])->name('addwishlist');
-
-// //Processor
-// Route::get('processorform', [ProcessorController::class, 'form'])->name('processorform');
-// Route::post('addprocessor', [ProcessorController::class, 'addProcessor'])->name('addprocessor');
-// Route::get('processor', [ProcessorController::class, 'processor'])->name('processor');
-
-
-// Route::get('heatsinkform', [HeatsinkController::class, 'form'])->name('heatsinkform');
-// Route::post('addheatsink', [HeatsinkController::class, 'addHeatsink'])->name('addheatsink');
-// Route::post('heatsink', [HeatsinkController::class, 'heatsink'])->name('heatsink');
-// Route::get('osform', [OSController::class, 'form'])->name('osform');
-// Route::post('addos', [OSController::class, 'addOs'])->name('addos');
-// Route::post('os', [OSController::class, 'os'])->name('os');
-
-
-
-Route::get('/admin/produk',function(){
-    return view('produk');
-})->name('produk');
-
-
-// Route::get('/admin/produk', 'ProdukController@index')->name('produk');
-// Route::get('/admin/os','OSController@index')->name('os');
-// Route::get('/admin/laptop','LaptopController@index')->name('laptop');
-// Route::get('/admin/allinone','LaptopController@index')->name('allinone');
-// Route::get('/admin/heatsink','HeatsinkController@index')->name('heatsink');
-// Route::get('/admin/battery','BatteryController@index')->name('battery');
-// Route::get('/admin/processor','ProcessorController@index')->name('processor');
-// Route::get('/admin/vga','VGAController@index')->name('vga');
-
-Route::get('/dash',function(){
-    return view('dash/dashboard');
-});
 
 require __DIR__.'/auth.php';
