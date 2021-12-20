@@ -27,9 +27,13 @@
                 <td align="center">{{$stockings->name}}</td>
                 <td align="center">{{$stockings->quantity}}</td>
                 <td align="center">{{$stockings->price}}</td>
-                <td align="center"><a href="#"><button type="button" class="btn btn-success">Edit</button></a></td>
                 <td align="center">
-                    <form action="{{ url('destroystock/'.$stockings->id) }}" method="post">
+                    <a href="{{ url('editstock/'.$stockings->id) }}">
+                        <button type="button" class="btn btn-success">Edit</button>
+                    </a>
+                </td>
+                <td align="center">
+                    <form action="{{ url('destroystock/'.$stockings->id) }}" method="post" onsubmit="return confirm('Are you sure?')">
                         @method('delete')
                         @csrf
                         <button type="submit" class="btn btn-danger">Delete</button>

@@ -97,6 +97,7 @@ Route::get('processor-catalog', [ProdukController::class, 'processorCatalog'])->
 Route::get('produk', [ProdukController::class, 'produk'])->name('showproduk');
 Route::get('produkform', [ProdukController::class, 'form'])->name('produkform');
 Route::delete('destroyproduk/{id}', [ProdukController::class, 'destroy']);
+Route::get('editproduk/{id}', [ProdukController::class, 'edit']);
 Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
 
 //Kategori
@@ -124,6 +125,8 @@ Route::post('addcheckout', [CheckoutController::class, 'addCheckout'])->name('ad
 Route::get('stocking', [StockingController::class, 'stocking'])->name('showstocking');
 // Route::delete('destroystock/{id}', 'StockingController@destroy');
 Route::delete('destroystock/{id}', [StockingController::class, 'destroy']);
+Route::get('editstock/{id}', [StockingController::class, 'edit']);
+Route::put('updatestock/{id}', [StockingController::class, 'update']);
 Route::get('stockingform', [StockingController::class, 'form'])->name('stockingform');
 Route::post('addstocking', [StockingController::class, 'addStocking'])->name('addstocking');
 

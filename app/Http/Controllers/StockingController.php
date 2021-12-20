@@ -53,4 +53,28 @@ class StockingController extends Controller
         $stocking->delete();
         return redirect()->back()->with('status','Student Deleted Successfully');
     }
+
+    public function edit($id)
+    {
+        $user = User::all();
+        $supplier = Supplier::all();
+        $produk = Produk::all();
+
+        $stocking = Stocking::find($id);
+        return view('dash.products.editStockForm', compact('stocking','user', 'supplier', 'produk'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $stocking = Stocking::find($id);
+        $stocking->stockDate = $request->input('stockDate');
+        $stocking->productId = $request->input('productId');
+        $stocking->supplierId = $request->input('supplierId');
+        $stocking->userId = $request->input('userId');
+        $stocking->quantity = $request->input('quantity');
+        $stocking->price = $request->input('price');
+        $stocking->update();
+
+        return redirect()->back()->with('success','Stock updated Successfully');
+    }
 }
