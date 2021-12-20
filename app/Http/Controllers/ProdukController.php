@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use App\Models\Produk;
 use App\Models\Kategori;
+use Image;
 
 class ProdukController extends Controller
 {
@@ -23,9 +25,23 @@ class ProdukController extends Controller
         return view('dash.products.showProduk', compact('produk'));
     }
 
-    public function addProduk()
+    public function addProduk(Request $request)
     {
         $produk = new Produk();
+
+        if($request->hasFile('image')){
+            // Delete file if user change avatar
+            $image = \request('image');
+    		$filename = time() . '.' . $image->getClientOriginalExtension();
+    		Image::make($image)->resize(300, null, function($constraint) {$constraint->aspectRatio();})->save( public_path('/frontend/image/upload/avatar/' . $filename ) );
+
+    		// $user = Auth::user();
+            // $produk = new Produk();
+    		$produk->image = $filename;
+    	}
+        else{
+            $produk->image = \request('image');
+        }
 
         //model->columnName = request('field_name');
         $produk->id = \request('id');
@@ -34,7 +50,7 @@ class ProdukController extends Controller
         $produk->brand = \request('brand');
         $produk->model = \request('model');
         $produk->deskripsi = \request('deskripsi');
-        $produk->image = \request('image');
+        // $produk->image = \request('image');
         $produk->garansi = \request('garansi');
         $produk->harga = \request('harga');
         $produk->stock = \request('stock');
