@@ -38,6 +38,15 @@
         color:rgb(66, 186, 150);
       }
 
+      .side-product-catalog-link{
+        text-decoration: none;
+        color: #5a5a5a; 
+      }
+
+      .side-product-catalog-link:hover{
+        color: rgb(66,186,150); 
+      }
+
       @media (min-width: 768px) {
         .bd-placeholder-img-lg {
           font-size: 3.5rem;

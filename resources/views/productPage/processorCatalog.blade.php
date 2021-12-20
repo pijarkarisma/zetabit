@@ -5,6 +5,15 @@
   .catalog-category{
     padding-bottom: 3rem;
   }
+
+  .card-product-title{
+    text-decoration: none; 
+    color: #5a5a5a;"
+  }
+
+  .card-product-title:hover{
+    color:rgb(66, 186, 150);
+  }
 </style>
 <div class="album py-3 product-page-bg">
     {{-- Breadcrumb --}}
@@ -122,13 +131,17 @@
                         @foreach($produk as $produks)
                         <div class="col-4">
                             <div class="card shadow-sm mb-4">
-                                <img class="bd-placeholder-img card-img-top" width="100%" height="220" style="object-fit:cover"
-                                src="/frontend/image/upload/produk/{{$produks->image}}" role="img" 
-                                aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" 
-                                focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
+                                <a href="{{route('product-detail', $produks->id)}}">
+                                    <img class="bd-placeholder-img card-img-top" width="100%" height="220" style="object-fit:cover"
+                                    src="/frontend/image/upload/produk/{{$produks->image}}" role="img" 
+                                    aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" 
+                                    focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/></img>
+                                </a>
                     
                                 <div class="card-body">
-                                  <p class="card-title product-title">{{$produks->produkName}} - {{$produks->deskripsi}}</p>
+                                    <a href="{{route('product-detail', $produks->id)}}" class="card-product-title">
+                                        <p class="card-title product-title">{{$produks->produkName}} - {{$produks->deskripsi}}</p>
+                                    </a>
                                   {{-- <p class="card-text harga-coret" 
                                   style="font-size: medium; text-decoration: line-through; margin-bottom: 0;">Rp 20.499.000</p> --}}
                                   <p class="card=text harga-promo" style="font-weight: bold; font-size: x-large;">Rp {{$produks->harga}}</p>

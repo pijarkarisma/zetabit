@@ -83,6 +83,10 @@ Route::get('/dash',function(){
     return view('dash/dashboard');
 });
 
+//Halaman detail produk
+// Route::get('product-detail', [ProdukController::class, 'productDetail'])->name('product-detail');
+Route::get('/product-detail/{id}',[ProdukController::class, 'productDetail'])->name('product-detail');
+
 // Halaman Katalog Processor
 Route::get('processor-catalog', [ProdukController::class, 'processorCatalog'])->name('processor-catalog');
 

@@ -32,6 +32,11 @@ class ProdukController extends Controller
         return view('productPage.processorCatalog', compact('produk'));
     }
 
+    public function productDetail($id){
+        $produk = Produk::find($id);
+        return view('productPage.productDetail', ['produk' => $produk]);
+    }
+
     public function addProduk(Request $request)
     {
         $produk = new Produk();

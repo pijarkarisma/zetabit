@@ -4,7 +4,9 @@
     padding-left:2rem;">
       <h5 style="color: black">Komponen PC</h5>
       <ul style="list-style: none; padding-left: 1rem;">
-        <li>CPU / Processor</li>
+        <a href="{{route('processor-catalog')}}" class="side-product-catalog-link">
+          <li>CPU / Processor</li>
+        </a>
         <li>Motherboard</li>
         <li>Memory</li>
         <li>GPU / Graphic Card</li>
