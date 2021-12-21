@@ -23,7 +23,7 @@
                         </ul>
                     </div>
                     <div>
-                        <h2 style="color: black">Rp {{$produk->harga}}</h2>
+                        <h2 style="color: black">Rp {{number_format($produk->harga)}}</h2>
                     </div>
                     <div class="pt-4">
                         <button type="button" class="btn btn-md btn-outline-danger">
