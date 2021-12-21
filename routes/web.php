@@ -63,7 +63,7 @@ Route::get('/superadmin',function(){
     else{
         return view('superadmin.dashboard');
     }
-})->middleware('prevent-back-history')->name('superadmin');
+})->middleware(['auth','verified','prevent-back-history'])->name('superadmin');
 
 
 //Halaman Komponen PC
