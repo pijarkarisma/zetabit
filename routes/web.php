@@ -11,6 +11,8 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CheckAvatarController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\CartDetailController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,7 +63,7 @@ Route::get('/superadmin',function(){
     else{
         return view('superadmin.dashboard');
     }
-})->middleware('prevent-back-history')->name('superadmin');
+})->middleware(['auth','verified','prevent-back-history'])->name('superadmin');
 
 
 //Halaman Komponen PC
@@ -79,13 +81,22 @@ Route::get('/aio-pc', function () {
     return view('productPage.aiopc');
 })->name('aiopc');
 
+// Route::get('shopping-cart', function(){
+//     return view('shopping-cart');
+// })->name('cart');
+
+Route::get('shopping-cart', [CartController::class, 'index'])->name('cart');
+Route::get('cart-detail', [CartDetailController::class, 'store'])->name('cartdetail');
+// Route::patch('kosongkan/{id}', [CartController::class, 'kosongkan'])->name('cartclear');
+Route::patch('/clear-cart/{id}',[CartController::class, 'kosongkan'])->name('cartclear');
+
 Route::get('/super',function(){
     return view('superadmin.dashboard');
 })->name('super');
 
-Route::get('/shopping-cart', function(){
-    return view('cart');
-})->name('cart');
+// Route::get('/shopping-cart', function(){
+//     return view('cart');
+// })->name('cart');
 
 Route::get('/admin/produk',function(){
     return view('produk');
@@ -97,6 +108,24 @@ Route::get('/dash',function(){
 
 //Search product
 Route::get('/search', [ProdukController::class, 'search'])->name('search');
+
+// Shopping cart
+Route::group(['middleware' => 'auth'], function() {
+    // cart
+    Route::resource('cart', '\App\Http\Controllers\CartController');
+    // Route::patch('kosongkan/{id}', 'CartController@kosongkan');
+    // cart detail
+    Route::resource('cartdetail', '\App\Http\Controllers\CartDetailController');
+});
+
+// Route::resource('cart', '\App\Http\Controllers\CartController');
+//     Route::patch('kosongkan/{id}', 'CartController@kosongkan');
+//     // cart detail
+//     Route::resource('cartdetail', '\App\Http\Controllers\CartDetailController');
+
+// Route::post('cartdetail', [CartDetailController::class, 'store'])->name('cartdetail-store');
+// Route::post('cartdetail', [CartDetailController::class, 'update'])->name('cartdetail.update');
+// Route::resource('cart', [CartController::class, 'index']);
 
 //Halaman detail produk
 // Route::get('product-detail', [ProdukController::class, 'productDetail'])->name('product-detail');
