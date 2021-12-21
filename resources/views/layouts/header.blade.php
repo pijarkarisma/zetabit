@@ -5,6 +5,11 @@
             <div class="nav justify-content-end">
                 <ul class="nav nav-top-kontenkanan">
                     <li class="nav-item">
+                      @if (Auth::user()->level == 'superadmin')
+                        <a class="nav-link top-kontenkanan" href="{{ route('superadmin') }}">Superadmin Dashboard</a>
+                      @endif
+                    </li>
+                    <li class="nav-item">
                       @if (Auth::user()->level == 'admin')
                         <a class="nav-link top-kontenkanan" href="{{ route('admin') }}">Admin Dashboard</a>
                       @endif

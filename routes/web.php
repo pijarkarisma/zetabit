@@ -56,6 +56,15 @@ Route::post('/profile', [UserController::class, 'update_profile'])
 Route::post('/profile/delete-avatar', [UserController::class, 'delete_avatar'])
 ->middleware(['auth','verified','prevent-back-history'])->name('deleteavatar');
 
+Route::get('/superadmin',function(){
+    if (Gate::denies('isSuperAdmin')){
+        abort(403);
+    }
+    else{
+        return view('superadmin.dashboard');
+    }
+})->middleware('prevent-back-history')->name('superadmin');
+
 
 //Halaman Komponen PC
 Route::get('/komponen-pc', function () {
@@ -80,6 +89,14 @@ Route::get('shopping-cart', [CartController::class, 'index'])->name('cart');
 Route::get('cart-detail', [CartDetailController::class, 'store'])->name('cartdetail');
 // Route::patch('kosongkan/{id}', [CartController::class, 'kosongkan'])->name('cartclear');
 Route::patch('/clear-cart/{id}',[CartController::class, 'kosongkan'])->name('cartclear');
+
+Route::get('/super',function(){
+    return view('superadmin.dashboard');
+})->name('super');
+
+// Route::get('/shopping-cart', function(){
+//     return view('cart');
+// })->name('cart');
 
 Route::get('/admin/produk',function(){
     return view('produk');
@@ -122,13 +139,21 @@ Route::get('produk', [ProdukController::class, 'produk'])->name('showproduk');
 Route::get('produkform', [ProdukController::class, 'form'])->name('produkform');
 Route::delete('destroyproduk/{id}', [ProdukController::class, 'destroy']);
 Route::get('editproduk/{id}', [ProdukController::class, 'edit']);
-Route::put('updateproduk/{id}', [StockingController::class, 'update']);
+Route::put('updateproduk/{id}', [ProdukController::class, 'update']);
 Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
 
 //Kategori
 Route::get('kategori', [KategoriController::class, 'kategori'])->name('showkategori');
 Route::get('kategoriform', [KategoriController::class, 'form'])->name('kategoriform');
 Route::post('addkategori', [KategoriController::class, 'addKategori'])->name('addkategori');
+
+//User
+Route::get('user', [UserController::class, 'user'])->name('showuser');
+Route::get('userform', [UserController::class, 'form'])->name('userform');
+Route::delete('destroyuser/{id}', [UserController::class, 'destroy']);
+Route::get('edituser/{id}', [UserController::class, 'edit']);
+Route::put('updateuser/{id}', [UserController::class, 'update']);
+Route::post('adduser', [UserController::class, 'add'])->name('adduser');
 
 //Delivery
 Route::get('delivery', [DeliveryController::class, 'delivery'])->name('showdelivery');

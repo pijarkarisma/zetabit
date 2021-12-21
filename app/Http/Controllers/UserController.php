@@ -5,16 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
-use App\Http\Models\User;
+use App\Models\User;
 use Image;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function profile(){
     	return view('layouts.profile', array('user' => Auth::user()) );
     }
@@ -52,19 +47,35 @@ class UserController extends Controller
         return view('layouts.profile', array('user' => Auth::user()) );
     }
 
-    public function index()
+    public function form()
     {
-        //
+        $user = new User();
+        $user = User::get(['users.id','users.name','users.email','users.password', 'users.phonenumber','users.address','users.level']);;
+        return view('superadmin.addUserForm', compact('user'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function user()
     {
-        //
+        $user = new User();
+        $user = User::get(['users.id','users.name','users.email','users.password', 'users.phonenumber','users.address','users.level']);;
+        return view('superadmin.showUsers', compact('user'));
+    }
+
+    public function add()
+    {
+        $user = new User();
+
+        //model->columnName = request('field_name');
+        $user->id = \request('id');
+        $user->id = \request('name');
+        $user->id = \request('email');
+        $user->id = \request('phoneNumber');
+        $user->id = \request('address');
+        $user->id = \request('password');
+        $user->id = \request('level');
+
+        $user->save();//Insert into table stocking(id, stockDate, productId, supplierId, userId, quantity, price) value(?,?,?,?,?,?,?);
+        return redirect()->route('userform')->with('success','User added successfully');
     }
 
     /**
@@ -73,43 +84,32 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->back()->with('success','User Deleted Successfully');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        return view('superadmin.editUserForm', compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->phoneNumber = $request->input('phoneNumber');
+        $user->address = $request->input('address');
+        $user->level = $request->input('level');
+
+        $user->update();
+
+        return redirect()->back()->with('success','User updated Successfully');
     }
 
     /**
@@ -118,8 +118,5 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+
 }
