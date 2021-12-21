@@ -53,6 +53,9 @@
                 <input type="text" class="form-control" name="price" value = "{{$stocking->price}}">
             </div>
         </div>
-        <button type="submit" class="btn btn-success mt-4">Edit</button>
+        <a href="{{ url('stockupdate/'.$stockings->productId/.$stockings->quantity) }}" method="POST">
+            @method('put')
+            <button type="submit" class="btn btn-success mt-4">Edit</button>
+        </a>
     </form>
 @endsection

@@ -84,6 +84,12 @@ class ProdukController extends Controller
         return redirect()->route('produkform')->with('success','Produk added successfully');
     }
 
+    public function stockupdate($id, Stocking $stocking){
+        $produk = Produk::find($id);
+        $produk->stock = $produk->stock + $stocking->quantity;
+        $produk->save();  
+    }
+
     public function destroy($id)
     {
         $produk = Produk::find($id);

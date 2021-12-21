@@ -106,11 +106,12 @@ Route::get('/product-detail/{id}',[ProdukController::class, 'productDetail'])->n
 Route::get('processor-catalog', [ProdukController::class, 'processorCatalog'])->name('processor-catalog');
 
 //Produk
-Route::get('produk', [ProdukController::class, 'produk'])->name('showproduk');
-Route::get('produkform', [ProdukController::class, 'form'])->name('produkform');
+Route::get('produk', [ProdukController::class, 'produk'])->middleware(['prevent-back-history'])->name('showproduk');
+Route::get('produkform', [ProdukController::class, 'form'])->middleware(['prevent-back-history'])->name('produkform');
 Route::delete('destroyproduk/{id}', [ProdukController::class, 'destroy']);
 Route::get('editproduk/{id}', [ProdukController::class, 'edit']);
 Route::put('updateproduk/{id}', [ProdukController::class, 'update']);
+Route::put('stockupdate/{id}/{quantity}', [ProdukController::class, 'stockupdate']);
 Route::post('addproduk', [ProdukController::class, 'addProduk'])->name('addproduk');
 
 //Kategori
