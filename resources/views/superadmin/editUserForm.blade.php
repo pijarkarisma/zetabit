@@ -30,7 +30,7 @@
             </div>
             <div class="form-group col-md-6 pt-3">
                 <label for="inputEmail4">Phone Number</label>
-                <input type="text" class="form-control" name="phoneNumber" value = "{{$user->phoneNumber}}">
+                <input type="text" class="form-control" name="phoneNumber" value = "{{$user->phonenumber}}">
             </div>
             <div class="form-group col-md-6 pt-3">
                 <label for="inputEmail4">Address</label>

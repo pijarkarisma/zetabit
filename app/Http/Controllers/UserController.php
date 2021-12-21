@@ -50,14 +50,14 @@ class UserController extends Controller
     public function form()
     {
         $user = new User();
-        $user = User::all();
+        $user = User::get(['users.id','users.name','users.email','users.password', 'users.phonenumber','users.address','users.level']);;
         return view('superadmin.addUserForm', compact('user'));
     }
 
     public function user()
     {
         $user = new User();
-        $user = User::all();
+        $user = User::get(['users.id','users.name','users.email','users.password', 'users.phonenumber','users.address','users.level']);;
         return view('superadmin.showUsers', compact('user'));
     }
 
@@ -100,11 +100,13 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
-        $user->id = $request->input('name');
-        $user->id = $request->input('email');
-        $user->id = $request->input('phoneNumber');
-        $user->id = $request->input('address');
-        $user->id = $request->input('level');
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->phoneNumber = $request->input('phoneNumber');
+        $user->address = $request->input('address');
+        $user->level = $request->input('level');
+
         $user->update();
 
         return redirect()->back()->with('success','User updated Successfully');

@@ -22,7 +22,7 @@
                 <th align="center">{{++$no}}</th>
                 <td align="center">{{$users->name}}</td>
                 <td align="center">{{$users->email}}</td>
-                <td align="center">{{$users->phoneNumber}}</td>
+                <td align="center">{{$users->phonenumber}}</td>
                 <td align="center">{{$users->address}}</td>
                 <td align="center">{{$users->level}}</td>
                 <td align="center">
