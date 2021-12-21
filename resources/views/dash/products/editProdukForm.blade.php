@@ -20,10 +20,6 @@
         @method('put')
         @csrf
         <div class="pt-4">
-            <div class="col-md-6 pt-3">
-                <label for="inputEmail4">ID</label>
-                <input type="number" id= "disabledInput" class="form-control" name="produkId" value = "{{$produk->id}}">
-            </div>
             <div class="col-md-6">
                 <label>Category</label>
                 <select name="kategoriId" class="form-control" value = "{{$produk->kategoriName}}">
